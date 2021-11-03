@@ -1,6 +1,5 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { CONSTANTS } from '../../constants/constants';
-import useToggle from '../../hooks/useToggle';
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '../../icons';
 import { TypeTheme, useThemeContext } from '../../theme/context/theme';
 import Navigation from '../navigation/navigation';
@@ -15,7 +14,12 @@ import {
 
 const Header: React.FC = () => {
     const { themeName, setThemeName } = useThemeContext();
-    const [menuHamburguerShown, setMenuHamburguerShown] = useToggle();
+    const [menuHamburguerShown, setMenuHamburguerShown] =
+        useState<boolean>(false);
+    const onHandleHamburguer = useCallback(() => {
+        setMenuHamburguerShown(!menuHamburguerShown);
+    }, [menuHamburguerShown]);
+    const onCloseHamburger = () => setMenuHamburguerShown(false);
     const onHandleTheme = useCallback(() => {
         const newTheme =
             themeName === TypeTheme.dark ? TypeTheme.light : TypeTheme.dark;
@@ -26,11 +30,11 @@ const Header: React.FC = () => {
             <HeaderMenu>
                 <Title>{CONSTANTS.name}</Title>
                 <Spacer />
-                <Navigation isShown={menuHamburguerShown} />
+                <Navigation isShown={menuHamburguerShown} onCloseHamburger={onCloseHamburger}/>
                 <ThemeButton onClick={onHandleTheme}>
                     {themeName === TypeTheme.light ? <MoonIcon /> : <SunIcon />}
                 </ThemeButton>
-                <HamburgerButton onClick={setMenuHamburguerShown}>
+                <HamburgerButton onClick={onHandleHamburguer}>
                     {!menuHamburguerShown ? <HamburgerIcon /> : <CloseIcon />}
                 </HamburgerButton>
             </HeaderMenu>

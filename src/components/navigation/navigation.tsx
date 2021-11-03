@@ -4,14 +4,20 @@ import { NavAction, NavContainer, NavItem, NavList } from './navigation.styled';
 
 interface NavigationProps {
     isShown?: boolean;
+    onCloseHamburger: () => void;
 }
-const Navigation: React.FC<NavigationProps> = ({ isShown }) => {
+const Navigation: React.FC<NavigationProps> = ({
+    isShown,
+    onCloseHamburger,
+}) => {
     return (
         <NavContainer isShown={isShown}>
             <NavList>
                 {itemsNavHeader.map(item => (
                     <NavItem key={item.ref}>
-                        <NavAction href={item.ref}>{item.name}</NavAction>
+                        <NavAction href={item.ref} onClick={onCloseHamburger}>
+                            {item.name}
+                        </NavAction>
                     </NavItem>
                 ))}
             </NavList>

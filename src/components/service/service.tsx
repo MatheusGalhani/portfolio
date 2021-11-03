@@ -4,9 +4,9 @@ import { Container, ServicesContent } from './service.styled';
 
 const Service: React.FC = () => {
     return (
-        <Container>
+        <Container id="#services">
             <ServicesContent>
-                <SectionTitle>Sobre Mim</SectionTitle>
+                <SectionTitle>Serviços</SectionTitle>
                 <SectionDescription>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Etiam pretium bibendum ex non pretium. In nec pretium magna,
