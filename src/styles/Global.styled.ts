@@ -19,8 +19,14 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     border: none;
     outline: none;
+    &:hover, &:focus {
+      outline: none;
+    }
+  }
+  a { 
     text-decoration: none;
   }
+  
   #root{
     max-width: ${devices.ultraLargeDesktops};
     margin: 0 auto;
