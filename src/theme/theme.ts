@@ -7,7 +7,8 @@ export const dark: DefaultTheme = {
     color: {
         textColor: '#F9FAFB',
         lightBlue: '#00B2FF',
-        paragraphColor: '#8491A0'
+        paragraphColor: '#8491A0',
+        skillBackground: "#212121",
     },
     button: {
         color: 'linear-gradient(267.93deg, #01b3ff -42.09%, #17191f 108.97%)',
@@ -23,7 +24,8 @@ export const light: DefaultTheme = {
     color: {
         textColor: '#171616',
         lightBlue: '#00B2FF',
-        paragraphColor: '#595959'
+        paragraphColor: '#595959',
+        skillBackground: "#F4F4F4",
     },
     button: {
         color: '#01B3FF',
