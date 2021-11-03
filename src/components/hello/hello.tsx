@@ -13,7 +13,7 @@ import {
 
 const Hello: React.FC = () => {
     return (
-        <Container id="#hello">
+        <Container id="hello">
             <HelloGridArea>
                 <Description>Olá, eu sou</Description>
                 <MyName>{CONSTANTS.name}</MyName>

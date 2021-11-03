@@ -11,7 +11,7 @@ import {
 
 const About: React.FC = () => {
     return (
-        <Container id="#about">
+        <Container id="about">
             <ImageContent>
                 <MeIcon />
             </ImageContent>

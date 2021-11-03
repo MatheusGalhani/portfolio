@@ -11,7 +11,7 @@ import {
 
 const Service: React.FC = () => {
     return (
-        <Container id="#services">
+        <Container id="services">
             <ServicesDescriptionContent>
                 <SectionTitle>Serviços</SectionTitle>
                 <SectionDescription>
