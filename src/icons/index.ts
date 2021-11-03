@@ -9,3 +9,5 @@ export { default as ResponsivenessIcon } from './responsiveness';
 export { default as MouseIcon } from './mouse';
 export { default as GithubIcon } from './github';
 export { default as InstagramIcon } from './instagram';
+export { default as MailIcon } from './mail';
+export { default as LinkedinIcon } from './linkedin';

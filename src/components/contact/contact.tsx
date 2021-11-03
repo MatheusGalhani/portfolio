@@ -1,6 +1,7 @@
 import React from 'react';
 import { CONSTANTS } from '../../constants/constants';
-import { GithubIcon, InstagramIcon } from '../../icons';
+import { GithubIcon, InstagramIcon, MailIcon } from '../../icons';
+import Linkedin from '../../icons/linkedin';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
 import {
     ContactInfo,
@@ -22,8 +23,14 @@ const Contact: React.FC = () => {
                     tortor. Ut ac mauris mi. Nulla nec porttitor lorem.
                 </SectionDescription>
                 <SocialMediaContainer>
+                    <SocialMediaLink href={CONSTANTS.email} target="_blank">
+                        <MailIcon />
+                    </SocialMediaLink>
                     <SocialMediaLink href={CONSTANTS.github} target="_blank">
                         <GithubIcon />
+                    </SocialMediaLink>
+                    <SocialMediaLink href={CONSTANTS.linkedin} target="_blank">
+                        <Linkedin />
                     </SocialMediaLink>
                     <SocialMediaLink href={CONSTANTS.instagram} target="_blank">
                         <InstagramIcon />
