@@ -15,7 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     font-size: 1rem;
     max-width: 100vw;
-    overflow-x: hidden;
   }
   button, a {
     cursor: pointer;
