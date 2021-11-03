@@ -4,3 +4,6 @@ export { default as MoonIcon } from './moon';
 export { default as SunIcon } from './sun';
 export { default as DownloadIcon } from './download';
 export { default as MeIcon } from './me';
+export { default as CodeIcon } from './code';
+export { default as ResponsivenessIcon } from './responsiveness';
+export { default as MouseIcon } from './mouse';
