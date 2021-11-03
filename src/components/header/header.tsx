@@ -10,6 +10,7 @@ import {
     Spacer,
     ThemeButton,
     Title,
+    TitleAction,
 } from './header.styled';
 
 const Header: React.FC = () => {
@@ -28,9 +29,14 @@ const Header: React.FC = () => {
     return (
         <Container>
             <HeaderMenu>
-                <Title>{CONSTANTS.name}</Title>
+                <TitleAction to="#root">
+                    <Title>{CONSTANTS.name}</Title>
+                </TitleAction>
                 <Spacer />
-                <Navigation isShown={menuHamburguerShown} onCloseHamburger={onCloseHamburger}/>
+                <Navigation
+                    isShown={menuHamburguerShown}
+                    onCloseHamburger={onCloseHamburger}
+                />
                 <ThemeButton onClick={onHandleTheme}>
                     {themeName === TypeTheme.light ? <MoonIcon /> : <SunIcon />}
                 </ThemeButton>
