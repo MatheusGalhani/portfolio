@@ -3,11 +3,14 @@ import { breakpoints } from '../../rules/devices';
 
 export const Container = styled.section`
     display: grid;
-    grid-template-areas: 'hello icon';
+    grid-template-areas: 'hello';
     justify-content: space-between;
     grid-gap: 1rem;
     margin: 1rem 0;
     width: 100%;
+    @media ${breakpoints.tablets} {
+        grid-template-areas: 'hello icon';
+    }
 `;
 
 export const HelloGridArea = styled.div`
@@ -30,29 +33,10 @@ export const MyName = styled.h3`
     padding: 0;
 `;
 
-export const VisitTo = styled.a`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    margin: 1rem 0;
-    color: ${({ theme }) => theme.button.text};
-    background: ${({ theme }) => theme.button.color};
-    border-radius: 0.25rem;
-
-    svg {
-        margin: 0 1rem;
-    }
-
-    &:hover {
-        background: ${({ theme }) => theme.button.hover};
-    }
-`;
-
 export const IconGridArea = styled.div`
     grid-area: icon;
     display: none;
+    margin-right: 1rem;
 
     @media ${breakpoints.tablets} {
         display: flex;

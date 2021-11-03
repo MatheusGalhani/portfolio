@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import { CONSTANTS } from '../../constants/constants';
 import useToggle from '../../hooks/useToggle';
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '../../icons';
 import { TypeTheme, useThemeContext } from '../../theme/context/theme';
@@ -23,7 +24,7 @@ const Header: React.FC = () => {
     return (
         <Container>
             <HeaderMenu>
-                <Title>Matheus Galhani</Title>
+                <Title>{CONSTANTS.name}</Title>
                 <Spacer />
                 <Navigation isShown={menuHamburguerShown} />
                 <ThemeButton onClick={onHandleTheme}>

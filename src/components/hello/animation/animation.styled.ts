@@ -18,3 +18,4 @@ export const RocketSvg = styled.svg`
     z-index: 3;
     animation: ${RocketAnimation} 3s ease-in-out infinite alternate;
 `;
+

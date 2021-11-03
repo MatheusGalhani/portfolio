@@ -12,6 +12,7 @@ declare module 'styled-components' {
         },
         color: {
             textColor: string;
+            paragraphColor: string;
             lightBlue: string;
         },
         button: {

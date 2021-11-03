@@ -14,6 +14,8 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.base.background};
     overflow-x: hidden;
     font-size: 1rem;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
   button, a {
     cursor: pointer;

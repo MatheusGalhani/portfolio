@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Main = styled.main`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     justify-content: flex-start;
     align-items: center;

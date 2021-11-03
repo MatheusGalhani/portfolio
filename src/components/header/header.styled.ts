@@ -11,6 +11,8 @@ export const Container = styled.header`
     left: 0;
     right: 0;
     width: 100vw;
+    z-index: 99;
+    background: ${({ theme }) => theme.base.background};
 `;
 
 export const HeaderMenu = styled.header`

@@ -1,4 +1,5 @@
 import React from 'react';
+import About from '../../../components/about/about';
 import Header from '../../../components/header/header';
 import Hello from '../../../components/hello/hello';
 import { Container, Main } from './home.styled';
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
             <Header />
             <Main>
                 <Hello />
+                <About />
             </Main>
         </Container>
     );
