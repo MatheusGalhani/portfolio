@@ -6,8 +6,13 @@ export const dark: DefaultTheme = {
     },
     color: {
         textColor: '#F9FAFB',
-        underline: '#00B2FF'
-    }
+        lightBlue: '#00B2FF',
+    },
+    button: {
+        color: 'linear-gradient(267.93deg, #01b3ff -42.09%, #17191f 108.97%)',
+        hover: 'linear-gradient(267.7deg, #01B3FF -10.09%, #17191F 152.32%)',
+        text: '#F9FAFB',
+    },
 };
 
 export const light: DefaultTheme = {
@@ -16,6 +21,11 @@ export const light: DefaultTheme = {
     },
     color: {
         textColor: '#171616',
-        underline: '#00B2FF'
-    }
+        lightBlue: '#00B2FF',
+    },
+    button: {
+        color: '#01B3FF',
+        hover: '#059BDB',
+        text: '#F9FAFB',
+    },
 };

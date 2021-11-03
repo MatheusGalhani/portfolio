@@ -9,3 +9,13 @@ export const Container = styled.div`
     max-width: ${devices.ultraLargeDesktops};
     margin: 1rem;
 `;
+
+
+export const Main = styled.main`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5rem 0 1rem;
+`;

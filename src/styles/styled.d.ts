@@ -12,7 +12,12 @@ declare module 'styled-components' {
         },
         color: {
             textColor: string;
-            underline: string;
+            lightBlue: string;
+        },
+        button: {
+            color: string;
+            hover: string;
+            text: string;
         }
     }
 }

@@ -19,7 +19,7 @@ export const HeaderMenu = styled.header`
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-    margin: 1rem;
+    padding: 1rem;
     width: 100%;
     max-width: ${devices.ultraLargeDesktops};
 `;
@@ -39,8 +39,6 @@ export const ThemeButton = styled.button`
     display: flex;
     font-size: 1rem;
     background: transparent;
-    border: none;
-    outline: none;
     margin: 0 1rem;
 `;
 
@@ -48,16 +46,12 @@ export const HamburgerButton = styled.button`
     display: flex;
     font-size: 1rem;
     background: transparent;
-    border: none;
-    outline: none;
     z-index: 30;
+    margin: 0;
+    padding: 0;
 
     @media ${breakpoints.tablets} {
         display: none;
     }
-    &:hover,
-    &:focus {
-        border: none;
-        outline: none;
-    }
+
 `;

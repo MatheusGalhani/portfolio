@@ -58,6 +58,6 @@ export const NavAction = styled.a`
     text-decoration: none;
 
     &:hover {
-        text-decoration: underline ${({ theme }) => theme.color.underline};
+        text-decoration: underline ${({ theme }) => theme.color.lightBlue};
     }
 `;

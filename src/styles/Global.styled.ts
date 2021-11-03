@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+import { devices } from '../rules/devices';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -15,7 +15,14 @@ export const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     font-size: 1rem;
   }
-  button {
+  button, a {
     cursor: pointer;
+    border: none;
+    outline: none;
+    text-decoration: none;
+  }
+  #root{
+    max-width: ${devices.ultraLargeDesktops};
+    margin: 0 auto;
   }
 `;
