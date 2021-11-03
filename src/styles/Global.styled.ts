@@ -1,15 +1,14 @@
-import { createGlobalStyle, DefaultTheme } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-interface GlobalProps {
-  theme: DefaultTheme;
-}
-export const GlobalStyle = createGlobalStyle<GlobalProps>`
+
+export const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Sen', sans-serif;
     box-sizing: border-box;
   }
   html {
     scroll-behavior: smooth;
+    min-height: 100%;
   }
   body {
     background: ${({ theme }) => theme.base.background};

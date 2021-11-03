@@ -9,6 +9,10 @@ declare module 'styled-components' {
     export interface DefaultTheme {
         base: {
             background: string;
+        },
+        color: {
+            textColor: string;
+            underline: string;
         }
     }
 }
