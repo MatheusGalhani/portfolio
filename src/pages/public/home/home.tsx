@@ -1,5 +1,6 @@
 import React from 'react';
 import About from '../../../components/about/about';
+import Contact from '../../../components/contact/contact';
 import Header from '../../../components/header/header';
 import Hello from '../../../components/hello/hello';
 import Service from '../../../components/service/service';
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
                 <About />
                 <Service />
                 <Skill />
+                <Contact />
             </Main>
         </Container>
     );

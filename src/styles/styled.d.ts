@@ -15,6 +15,7 @@ declare module 'styled-components' {
             paragraphColor: string;
             skillBackground: string;
             lightBlue: string;
+            contactBottomIcon: string;
         },
         button: {
             color: string;

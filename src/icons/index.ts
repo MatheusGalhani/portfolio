@@ -7,3 +7,5 @@ export { default as MeIcon } from './me';
 export { default as CodeIcon } from './code';
 export { default as ResponsivenessIcon } from './responsiveness';
 export { default as MouseIcon } from './mouse';
+export { default as GithubIcon } from './github';
+export { default as InstagramIcon } from './instagram';

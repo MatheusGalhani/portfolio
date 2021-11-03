@@ -3,12 +3,15 @@ import { breakpoints } from '../../rules/devices';
 import { _SKILL_MAX_ITEMS } from './skill.model';
 
 export const Container = styled.section`
-    display: flex;
+    display: grid;
     grid-gap: 1rem;
     margin: 1rem 0;
     width: 100%;
+    grid-template-areas: 'info' 'skill';
+    @media ${breakpoints.tablets} {
+        grid-template-areas: 'info skill';
+    }
     @media ${breakpoints.desktops} {
-        display: grid;
         grid-template-areas: 'skill info';
     }
 `;
@@ -19,23 +22,13 @@ export const SkillsDescriptionContent = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     margin: 1rem;
-    @media ${breakpoints.desktops} {
-        grid-area: info;
-    }
+    grid-area: info;
 `;
 
 export const SkillList = styled.ul`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    list-style: none;
-
-    @media ${breakpoints.tablets} {
-        grid-area: skill;
-        display: grid;
-        grid-template-columns: repeat(${_SKILL_MAX_ITEMS}, 1fr);
-    }
+    grid-area: skill;
+    display: grid;
+    grid-template-columns: repeat(${_SKILL_MAX_ITEMS}, 1fr);
 `;
 
 export const SkillItem = styled.li`
@@ -44,7 +37,7 @@ export const SkillItem = styled.li`
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 1rem;
+    margin: 1rem 1rem 1rem 0;
 `;
 
 export const SkillItemContent = styled.span`

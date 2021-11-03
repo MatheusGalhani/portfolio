@@ -9,6 +9,7 @@ export const dark: DefaultTheme = {
         lightBlue: '#00B2FF',
         paragraphColor: '#8491A0',
         skillBackground: "#212121",
+        contactBottomIcon: '#181B26'
     },
     button: {
         color: 'linear-gradient(267.93deg, #01b3ff -42.09%, #17191f 108.97%)',
@@ -26,6 +27,7 @@ export const light: DefaultTheme = {
         lightBlue: '#00B2FF',
         paragraphColor: '#595959',
         skillBackground: "#F4F4F4",
+        contactBottomIcon: '#F9FAFB'
     },
     button: {
         color: '#01B3FF',
