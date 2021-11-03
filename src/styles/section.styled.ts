@@ -27,12 +27,18 @@ export const VisitTo = styled.a`
     color: ${({ theme }) => theme.button.text};
     background: ${({ theme }) => theme.button.color};
     border-radius: 0.25rem;
+    font-size: 1rem;
 
     svg {
         margin: 0 1rem;
+        font-size: 1rem;
     }
 
     &:hover {
         background: ${({ theme }) => theme.button.hover};
     }
+`;
+
+export const SectionDescription = styled.p`
+    color: ${({ theme }) => theme.color.paragraphColor};
 `;

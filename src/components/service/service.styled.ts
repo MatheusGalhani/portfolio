@@ -6,30 +6,18 @@ export const Container = styled.section`
     grid-gap: 1rem;
     margin: 1rem 0;
     width: 100%;
+
     @media ${breakpoints.tablets} {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 `;
 
-export const AboutContent = styled.div`
+
+export const ServicesContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     margin: 1rem;
-`;
-
-export const ImageContent = styled.div`
-    display: none;
-    margin: 1rem 1rem 1rem 0;
-    @media ${breakpoints.tablets} {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        svg {
-            width: 400px;
-        }
-    }
 `;
