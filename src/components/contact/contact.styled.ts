@@ -19,7 +19,8 @@ export const ContactInfo = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 1rem 0;
+    margin: 1rem 0 1rem 1rem;
+    padding-right: 1rem;
     width: 100%;
 `;
 
@@ -40,4 +41,5 @@ export const ContactEmail = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin: 1rem;
 `;
