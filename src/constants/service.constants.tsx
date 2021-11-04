@@ -4,8 +4,10 @@ import { TypeServiceSection } from './constants.type';
 const ServiceConstant: TypeServiceSection = {
     id: 'services',
     title: 'Serviços',
-    description:
-        'Se você precisa de alguém para desenvolver um aplicativo, site pessoal ou comercial ou até simples landing page você está no lugar certo!',
+    description: [
+        'Se você precisa de alguém para desenvolver um aplicativo, site pessoal, comercial ou até mesmo uma simples landing page você está no lugar certo!',
+        'Realizo as entregas dos projetos através do Github em um repositório privado ou público, com o intuito de manter o código sempre versionado, facilitando o processo de controle de histórico.'
+    ],
     services: [
         {
             name: 'Development',
@@ -15,19 +17,19 @@ const ServiceConstant: TypeServiceSection = {
         {
             name: 'Mobile-friendly',
             description:
-                'Design responsivo tornando seu site acessível a todos os usuários, independentemente do dispositivo. Criando telas a partir do conceito Mobile First.',
+                'Design responsivo tornando seu site acessível, independentemente do dispositivo. Criando telas a partir do conceito Mobile First.',
             icon: <ResponsivenessIcon />,
         },
         {
             name: 'Analytics',
             description:
-                'Obtenha informações sobre quem está navegando em seu site para que você possa tomar decisões de negócios mais inteligentes. ',
+                'Obtenha informações sobre quem está navegando em seu site, para que você possa tomar decisões de negócios mais inteligentes. ',
             icon: <SearchIcon />,
         },
         {
             name: 'Clean code',
             description:
-                'Desenvolvimento seguindo os principais design patterns para deixar o código intuitivo, elegante e com fácil manutenção.',
+                'Desenvolvimento seguindo os principais design patterns, com objetivo de tornar o código mais intuitivo, elegante e com fácil manutenção.',
             icon: <MouseIcon />,
         },
     ],

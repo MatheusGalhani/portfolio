@@ -25,9 +25,11 @@ const Contact: React.FC = () => {
         <Container id={_CONTACT_SECTION.id}>
             <ContactInfo>
                 <SectionTitle>{_CONTACT_SECTION.title}</SectionTitle>
-                <SectionDescription>
-                    {_CONTACT_SECTION.description}
-                </SectionDescription>
+                {_CONTACT_SECTION.description.map((description, index) => (
+                    <SectionDescription key={`${_CONTACT_SECTION.id}-${index}`}>
+                        {description}
+                    </SectionDescription>
+                ))}
                 <SocialMediaContainer>
                     <SocialMediaLink href={_CONSTANTS.email} target="_blank">
                         <MailIcon />

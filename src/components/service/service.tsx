@@ -14,9 +14,11 @@ const Service: React.FC = () => {
         <Container id={_SERVICE_SECTION.id}>
             <ServicesDescriptionContent>
                 <SectionTitle>{_SERVICE_SECTION.title}</SectionTitle>
-                <SectionDescription>
-                    {_SERVICE_SECTION.description}
-                </SectionDescription>
+                {_SERVICE_SECTION.description.map((description, index) => (
+                    <SectionDescription key={`${_SERVICE_SECTION.id}-${index}`}>
+                        {description}
+                    </SectionDescription>
+                ))}
             </ServicesDescriptionContent>
             <ServicesProviderContainer>
                 {_SERVICE_SECTION.services.map(item => (

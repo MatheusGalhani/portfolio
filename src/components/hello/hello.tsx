@@ -17,7 +17,11 @@ const Hello: React.FC = () => {
             <HelloGridArea>
                 <Description>{_HELLO_SECTION.title}</Description>
                 <MyName>{_CONSTANTS.name}</MyName>
-                <Description>{_HELLO_SECTION.description}</Description>
+                {_HELLO_SECTION.description.map((description, index) => (
+                    <Description key={`${_HELLO_SECTION.id}-${index}`}>
+                        {description}
+                    </Description>
+                ))}
                 <VisitTo href={_CONSTANTS.github} target="_blank">
                     Visitar GitHub <IoArrowForwardOutline />
                 </VisitTo>

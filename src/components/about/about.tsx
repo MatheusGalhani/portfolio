@@ -17,9 +17,11 @@ const About: React.FC = () => {
             </ImageContent>
             <AboutContent>
                 <SectionTitle>{_ABOUT_SECTION.title}</SectionTitle>
-                <SectionDescription>
-                    {_ABOUT_SECTION.description}
-                </SectionDescription>
+                {_ABOUT_SECTION.description.map((description, index) => (
+                    <SectionDescription key={`${_ABOUT_SECTION.id}-${index}`}>
+                        {description}
+                    </SectionDescription>
+                ))}
                 <VisitTo href={_CONSTANTS.linkedin} target="_blank">
                     Visitar LinkedIn <IoArrowForwardOutline />
                 </VisitTo>

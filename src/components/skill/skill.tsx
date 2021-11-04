@@ -33,9 +33,15 @@ const Skill: React.FC = () => {
                 {!selectedSkill ? (
                     <Fragment>
                         <SectionTitle>{_SKILL_SECTION.title}</SectionTitle>
-                        <SectionDescription>
-                            {_SKILL_SECTION.description}
-                        </SectionDescription>
+                        {_SKILL_SECTION.description.map(
+                            (description, index) => (
+                                <SectionDescription
+                                    key={`${_SKILL_SECTION.id}-${index}`}
+                                >
+                                    {description}
+                                </SectionDescription>
+                            ),
+                        )}
                     </Fragment>
                 ) : (
                     <Fragment>
