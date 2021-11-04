@@ -4,7 +4,6 @@ import { breakpoints } from '../../rules/devices';
 export const Container = styled.section`
     display: flex;
     grid-gap: 1rem;
-    margin: 1rem 0;
     width: 100%;
     @media ${breakpoints.tablets} {
         display: grid;
@@ -17,12 +16,12 @@ export const AboutContent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin: 1rem;
+    margin: 0 1rem 1rem;
 `;
 
 export const ImageContent = styled.div`
     display: none;
-    margin: 1rem 1rem 1rem 0;
+    margin: 0 1rem 1rem 0;
     @media ${breakpoints.tablets} {
         display: flex;
         flex-direction: row;
