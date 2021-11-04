@@ -24,7 +24,7 @@ const SkillConstant: TypeSkillSection = {
         {
             name: 'Django',
             icon: <SiDjango />,
-            rating: 80,
+            rating: 85,
             description:
                 'Django é uma estrutura da web Python de alto nível que incentiva o desenvolvimento rápido e um design limpo e pragmático. Ele cuida de grande parte do trabalho de desenvolvimento da web, para que você possa se concentrar em escrever seu aplicativo sem precisar reinventar a roda.',
         },
@@ -44,7 +44,7 @@ const SkillConstant: TypeSkillSection = {
         {
             name: 'React',
             icon: <FaReact />,
-            rating: 90,
+            rating: 80,
             description:
                 'O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. O React.JS também permite a criação de componentes reutilizaveis para nossa aplicação e a criação de grandes aplicativos da web que podem alterar os dados, sem recarregar a página.',
         },
@@ -57,7 +57,7 @@ const SkillConstant: TypeSkillSection = {
         {
             name: 'Github',
             icon: <FaGithubAlt />,
-            rating: 70,
+            rating: 80,
             description: 'GitHub é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. Ele permite que programadores, utilitários ou qualquer usuário cadastrado na plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do mundo.',
         },
         {
