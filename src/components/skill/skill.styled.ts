@@ -9,11 +9,9 @@ export const Container = styled.section`
     margin: 1rem 0;
     width: 100%;
     grid-template-areas: 'info' 'skill';
-    @media ${breakpoints.tablets} {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 'info skill';
-    }
+
     @media ${breakpoints.desktops} {
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: 'skill info';
     }
 `;
@@ -25,15 +23,26 @@ export const SkillsDescriptionContent = styled.div`
     align-items: flex-start;
     margin: 1rem;
     grid-area: info;
+    p { 
+        width: 80%;
+        @media ${breakpoints.desktops} {
+            width: 100%;
+        }
+    }
 `;
 
 export const SkillsListContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     margin: 1rem;
     grid-area: skill;
+
+    @media ${breakpoints.desktops} {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 `;
 
 export const SkillList = styled.ul`
@@ -44,7 +53,7 @@ export const SkillList = styled.ul`
         ${_SKILL_SECTION.max_items / 2},
         minmax(7.5rem, 1fr)
     );
-    @media ${breakpoints.tablets} {
+    @media ${breakpoints.phones} {
         display: grid;
         grid-template-columns: repeat(
             ${_SKILL_SECTION.max_items},
@@ -85,7 +94,7 @@ export const SkillAnchor = styled(Link)`
     padding: 0;
     margin: 0;
     background: transparent;
-    
+
     svg {
         margin: 0;
     }
