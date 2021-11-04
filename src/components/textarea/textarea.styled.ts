@@ -14,7 +14,7 @@ export const Container = styled.label<ContainerProps>`
     width: 100%;
 `;
 
-export const InputField = styled.input`
+export const TextareaField = styled.textarea`
     display: flex;
     width: 100%;
     padding: 1rem;
@@ -24,7 +24,8 @@ export const InputField = styled.input`
     border-radius: 0.25rem;
     background-color: transparent;
     color: ${({ theme }) => theme.color.textColor};
-    outline: none;
+    outline: none;    
+    resize: none;
 `;
 
 export const Outlined = styled.span`

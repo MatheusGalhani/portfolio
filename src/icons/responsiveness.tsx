@@ -14,30 +14,30 @@ const Responsiveness: React.FC = () => {
             <path
                 d="M6.33337 22.1666H15.8334V31.6666"
                 stroke={theme.color.lightBlue}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M31.6666 15.8334H22.1666V6.33337"
                 stroke={theme.color.lightBlue}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M22.1666 15.8333L33.25 4.75"
                 stroke={theme.color.lightBlue}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M4.75 33.25L15.8333 22.1666"
                 stroke={theme.color.lightBlue}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
         </svg>
     );

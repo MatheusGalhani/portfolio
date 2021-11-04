@@ -14,14 +14,14 @@ const Mail: React.FC = () => {
             <path
                 d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
                 stroke="url(#paint0_linear_114:6)"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M22 6L12 13L2 6"
                 stroke="url(#paint1_linear_114:6)"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <defs>
                 <linearGradient
@@ -32,10 +32,10 @@ const Mail: React.FC = () => {
                     y2="20"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color={theme.color.lightBlue} />
+                    <stop stopColor={theme.color.lightBlue} />
                     <stop
                         offset="1"
-                        stop-color={theme.color.contactBottomIcon}
+                        stopColor={theme.color.contactBottomIcon}
                     />
                 </linearGradient>
                 <linearGradient
@@ -46,10 +46,10 @@ const Mail: React.FC = () => {
                     y2="13"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color={theme.color.lightBlue} />
+                    <stop stopColor={theme.color.lightBlue} />
                     <stop
                         offset="1"
-                        stop-color={theme.color.contactBottomIcon}
+                        stopColor={theme.color.contactBottomIcon}
                     />
                 </linearGradient>
             </defs>

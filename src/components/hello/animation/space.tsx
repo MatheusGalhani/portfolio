@@ -88,8 +88,8 @@ const Space: React.FC = () => {
                     y2="274.436"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#00B2FF" />
-                    <stop offset="1" stop-color="#19223B" stop-opacity="0" />
+                    <stop stopColor="#00B2FF" />
+                    <stop offset="1" stopColor="#19223B" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </SpaceSvg>

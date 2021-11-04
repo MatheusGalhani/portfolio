@@ -14,16 +14,16 @@ const Code: React.FC = () => {
             <path
                 d="M25.3334 28.5L34.8334 19L25.3334 9.5"
                 stroke={theme.color.lightBlue}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M12.6666 9.5L3.16663 19L12.6666 28.5"
                 stroke={theme.color.lightBlue}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
         </svg>
     );

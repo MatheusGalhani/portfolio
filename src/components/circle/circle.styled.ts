@@ -11,11 +11,11 @@ export const CircleSvg = styled.svg`
 const InternalCircleSvg = styled.circle`
     stroke: ${({ theme }) => theme.color.lightBlue};
     fill: ${({ theme }) => theme.color.skillBackground};
-    stroke-width: 10;
+    strokeWidth: 10;
     stroke-dasharray: 314;
     stroke-dashoffset: 314;
     transform: translate(0.6rem, 0.6rem);
-    stroke-linecap: round;
+    strokeLinecap: round;
 `;
 
 export const FirstCircle = styled(InternalCircleSvg)`

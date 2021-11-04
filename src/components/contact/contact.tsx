@@ -4,6 +4,7 @@ import { GithubIcon, InstagramIcon, MailIcon } from '../../icons';
 import Linkedin from '../../icons/linkedin';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
 import Input from '../input/input';
+import Textarea from '../textarea/textarea';
 import {
     ContactEmail,
     ContactInfo,
@@ -15,6 +16,7 @@ import {
 const Contact: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [subject, setSubject] = useState<string>('');
+    const [body, setBody] = useState<string>('');
     return (
         <Container id="contact">
             <ContactInfo>
@@ -55,6 +57,12 @@ const Contact: React.FC = () => {
                     id="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
+                />
+                <Textarea
+                    placeholder="Mensagem"
+                    id="body"
+                    value={body}
+                    onChange={e => setBody(e.target.value)}
                 />
             </ContactEmail>
         </Container>

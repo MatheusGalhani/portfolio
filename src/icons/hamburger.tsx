@@ -14,26 +14,26 @@ const Hamburger: React.FC = () => {
             <path
                 d="M27.9999 13.3333H9.33325"
                 stroke={theme.color.textColor}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M28 8H4"
                 stroke={theme.color.textColor}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M28 18.6667H4"
                 stroke={theme.color.textColor}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M27.9999 24H9.33325"
                 stroke={theme.color.textColor}
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
         </svg>
     );

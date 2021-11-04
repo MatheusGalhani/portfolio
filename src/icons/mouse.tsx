@@ -14,16 +14,16 @@ const Mouse: React.FC = () => {
             <path
                 d="M4.75 4.75L15.9442 31.6192L19.9183 19.9183L31.6192 15.9442L4.75 4.75Z"
                 stroke={theme.color.lightBlue}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M20.5835 20.5834L30.0835 30.0834"
                 stroke={theme.color.lightBlue}
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
         </svg>
     );
