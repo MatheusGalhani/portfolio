@@ -51,15 +51,16 @@ const Skill: React.FC = () => {
                 <SkillList>
                     {_SKILL_SECTION.skills.map(skill => (
                         <SkillItem key={skill.name}>
-                            <SkillAnchor to={`#${_SKILL_SECTION.id}`}
-                                onClick={() => setSelectedSkill(skill)}
-                                onMouseEnter={() => setSelectedSkill(skill)}
-                            >
-                                <Circle rating={skill.rating} />
-                                <SkillItemContent>
+                            <Circle rating={skill.rating} />
+                            <SkillItemContent>
+                                <SkillAnchor
+                                    to={`#${_SKILL_SECTION.id}`}
+                                    onClick={() => setSelectedSkill(skill)}
+                                    onMouseEnter={() => setSelectedSkill(skill)}
+                                >
                                     {skill.icon}
-                                </SkillItemContent>
-                            </SkillAnchor>
+                                </SkillAnchor>
+                            </SkillItemContent>
                         </SkillItem>
                     ))}
                 </SkillList>
