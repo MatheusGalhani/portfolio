@@ -27,9 +27,4 @@ export const GlobalStyle = createGlobalStyle`
   a { 
     text-decoration: none;
   }
-  
-  #root{
-    max-width: ${devices.ultraLargeDesktops};
-    margin: 0 auto;
-  }
 `;

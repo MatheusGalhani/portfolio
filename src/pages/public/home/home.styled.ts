@@ -7,7 +7,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     max-width: ${devices.ultraLargeDesktops};
-    margin: 1rem;
+    margin: 0 auto;
 `;
 
 
@@ -17,5 +17,5 @@ export const Main = styled.main`
     width: 100%;
     justify-content: flex-start;
     align-items: center;
-    margin: 5rem 0 1rem;
+    margin: 5rem 1rem 1rem;
 `;

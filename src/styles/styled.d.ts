@@ -17,6 +17,10 @@ declare module 'styled-components' {
             lightBlue: string;
             contactBottomIcon: string;
         },
+        footer: {
+            textColor: string;
+            background: string;
+        };
         button: {
             color: string;
             hover: string;
