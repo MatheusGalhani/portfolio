@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { _SKILL_SECTION } from '../../constants/constants';
+import { _SKILL_SECTION } from '../../constants';
 import { breakpoints } from '../../rules/devices';
 
 export const Container = styled.section`

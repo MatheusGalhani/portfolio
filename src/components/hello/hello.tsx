@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
-import {_CONSTANTS, _HELLO_SECTION } from '../../constants/constants';
+import {_CONSTANTS, _HELLO_SECTION } from '../../constants';
 import { VisitTo } from '../../styles/section.styled';
 import { RocketIcon, SpaceIcon } from './animation';
 import {

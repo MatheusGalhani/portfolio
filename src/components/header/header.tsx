@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import {_CONSTANTS } from '../../constants/constants';
+import {_CONSTANTS } from '../../constants';
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '../../icons';
 import { TypeTheme, useThemeContext } from '../../theme/context/theme';
 import Navigation from '../navigation/navigation';

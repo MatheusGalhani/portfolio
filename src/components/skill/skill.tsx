@@ -1,5 +1,5 @@
 import React from 'react';
-import { _SKILL_SECTION } from '../../constants/constants';
+import { _SKILL_SECTION } from '../../constants';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
 import Circle from '../circle/circle';
 import {

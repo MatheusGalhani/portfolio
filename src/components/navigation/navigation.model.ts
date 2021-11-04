@@ -3,7 +3,7 @@ import {
     _CONTACT_SECTION,
     _SERVICE_SECTION,
     _SKILL_SECTION,
-} from '../../constants/constants';
+} from '../../constants';
 
 interface NavListProps {
     name: string;

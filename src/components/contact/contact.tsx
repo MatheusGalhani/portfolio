@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
-import { _CONSTANTS, _CONTACT_SECTION } from '../../constants/constants';
+import { _CONSTANTS, _CONTACT_SECTION } from '../../constants';
 import { GithubIcon, InstagramIcon, MailIcon } from '../../icons';
 import Linkedin from '../../icons/linkedin';
 import {

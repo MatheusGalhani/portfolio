@@ -1,5 +1,5 @@
 import React from 'react';
-import { _SERVICE_SECTION } from '../../constants/constants';
+import { _SERVICE_SECTION } from '../../constants';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
 import {
     Container,

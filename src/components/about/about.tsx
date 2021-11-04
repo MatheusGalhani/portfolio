@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
-import { _ABOUT_SECTION, _CONSTANTS } from '../../constants/constants';
+import { _ABOUT_SECTION, _CONSTANTS } from '../../constants';
 import { MeIcon } from '../../icons';
 import {
     SectionDescription,

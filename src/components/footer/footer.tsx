@@ -1,5 +1,5 @@
 import React from 'react';
-import {_CONSTANTS } from '../../constants/constants';
+import {_CONSTANTS } from '../../constants';
 import { FooterContainer, FooterSpan } from './footer.styled';
 
 const Footer: React.FC = () => {
