@@ -83,22 +83,8 @@ export const SkillAnchor = styled(Link)`
     padding: 0;
     margin: 0;
     background: transparent;
-`;
-
-export const SkillTitleItemContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
+    
     svg {
         margin: 0;
     }
-`;
-
-export const SkillButton = styled.button`
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    background: transparent;
 `;

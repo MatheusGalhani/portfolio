@@ -1,23 +1,31 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useCallback, useState } from 'react';
+import { isBrowser } from 'react-device-detect';
 import { _SKILL_SECTION } from '../../constants';
 import { TypeSkill } from '../../constants/constants.type';
-import { CloseIcon } from '../../icons';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
 import Circle from '../circle/circle';
 import {
     Container,
-    SkillAnchor,
-    SkillButton,
-    SkillItem,
+    SkillAnchor, SkillItem,
     SkillItemContent,
     SkillList,
     SkillsDescriptionContent,
-    SkillsListContainer,
-    SkillTitleItemContainer,
+    SkillsListContainer
 } from './skill.styled';
 
 const Skill: React.FC = () => {
     const [selectedSkill, setSelectedSkill] = useState<TypeSkill | undefined>();
+
+    const onHandleSelectedSkill = useCallback(
+        (skill: TypeSkill) => {
+            if (selectedSkill && selectedSkill.name === skill.name) {
+                setSelectedSkill(undefined);
+            } else {
+                setSelectedSkill(skill);
+            }
+        },
+        [selectedSkill],
+    );
     return (
         <Container id={_SKILL_SECTION.id}>
             <SkillsDescriptionContent>
@@ -30,14 +38,7 @@ const Skill: React.FC = () => {
                     </Fragment>
                 ) : (
                     <Fragment>
-                        <SkillTitleItemContainer>
-                            <SectionTitle>{selectedSkill.name}</SectionTitle>
-                            <SkillButton
-                                onClick={() => setSelectedSkill(undefined)}
-                            >
-                                <CloseIcon />
-                            </SkillButton>
-                        </SkillTitleItemContainer>
+                        <SectionTitle>{selectedSkill.name}</SectionTitle>
                         <SectionDescription>
                             {selectedSkill.description}
                         </SectionDescription>
@@ -55,8 +56,8 @@ const Skill: React.FC = () => {
                             <SkillItemContent>
                                 <SkillAnchor
                                     to={`#${_SKILL_SECTION.id}`}
-                                    onClick={() => setSelectedSkill(skill)}
-                                    onMouseEnter={() => setSelectedSkill(skill)}
+                                    onClick={() => onHandleSelectedSkill(skill)}
+                                    onMouseEnter={() => isBrowser && setSelectedSkill(skill)}
                                 >
                                     {skill.icon}
                                 </SkillAnchor>
