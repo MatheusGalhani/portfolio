@@ -12,13 +12,14 @@ export interface TypeServiceSection extends TypeSection {
     }[];
 }
 
+export interface TypeSkill {
+    name: string;
+    icon: JSX.Element;
+    rating: number;
+    description: string;
+}
 export interface TypeSkillSection extends TypeSection {
-    skills: {
-        name: string;
-        icon: JSX.Element;
-        rating: number;
-        description: string;
-    }[];
+    skills: TypeSkill[];
     max_items: number;
 }
 

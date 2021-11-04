@@ -9,6 +9,7 @@ export const Container = styled.section`
     width: 100%;
     grid-template-areas: 'info' 'skill';
     @media ${breakpoints.tablets} {
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: 'info skill';
     }
     @media ${breakpoints.desktops} {
@@ -21,14 +22,32 @@ export const SkillsDescriptionContent = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 2.5rem 1rem 1rem;
+    margin: 1rem;
     grid-area: info;
 `;
 
-export const SkillList = styled.ul`
+export const SkillsListContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
     grid-area: skill;
+`;
+
+export const SkillList = styled.ul`
     display: grid;
-    grid-template-columns: repeat(${_SKILL_SECTION.max_items}, 1fr);
+    grid-template-columns: repeat(
+        ${_SKILL_SECTION.max_items / 2},
+        minmax(7.5rem, 1fr)
+    );
+    @media ${breakpoints.tablets} {
+        display: grid;
+        grid-template-columns: repeat(
+            ${_SKILL_SECTION.max_items},
+            minmax(7.5rem, 1fr)
+        );
+    }
 `;
 
 export const SkillItem = styled.li`
@@ -38,6 +57,7 @@ export const SkillItem = styled.li`
     align-items: center;
     position: relative;
     margin: 1rem 1rem 1rem 0;
+    max-width: 7.5rem;
 `;
 
 export const SkillItemContent = styled.span`
@@ -55,4 +75,11 @@ export const SkillItemContent = styled.span`
     svg {
         color: ${({ theme }) => theme.color.lightBlue};
     }
+`;
+
+export const SkillButton = styled.button`
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background: transparent;
 `;

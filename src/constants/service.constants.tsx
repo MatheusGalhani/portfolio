@@ -1,34 +1,33 @@
-import { CodeIcon, MouseIcon, ResponsivenessIcon } from "../icons";
-import { TypeServiceSection } from "./constants.type";
+import { CodeIcon, MouseIcon, ResponsivenessIcon, SearchIcon } from '../icons';
+import { TypeServiceSection } from './constants.type';
 
 const ServiceConstant: TypeServiceSection = {
     id: 'services',
     title: 'Serviços',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pretium bibendum ex non pretium. In nec pretium magna, sed interdum tortor. Nullam dui tellus, consectetur vel quam vel, vestibulum ultricies massa. Curabitur et sodales tortor. Ut ac mauris mi. Nulla nec porttitor lorem.',
+        'Se você precisa de alguém para desenvolver um aplicativo, site pessoal ou comercial ou até simples landing page você está no lugar certo!',
     services: [
         {
-            name: 'Desenvolvimento',
-            description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in orci non tellus suscipit molestie et non lorem. Duis blandit sagittis elit, quis tincidunt sem euismod vel. Integer scelerisque eros et elit bibendum, at euismod velit imperdiet.',
+            name: 'Development',
+            description: "Desenvolvimento de projetos end-to-end, criando API's no padrão REST e criando websites dinâmicos ou estáticos.",
             icon: <CodeIcon />,
         },
         {
-            name: 'SEO',
+            name: 'Mobile-friendly',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in orci non tellus suscipit molestie et non lorem. Duis blandit sagittis elit, quis tincidunt sem euismod vel. Integer scelerisque eros et elit bibendum, at euismod velit imperdiet.',
-            icon: <CodeIcon />,
-        },
-        {
-            name: 'Responsividade',
-            description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in orci non tellus suscipit molestie et non lorem. Duis blandit sagittis elit, quis tincidunt sem euismod vel. Integer scelerisque eros et elit bibendum, at euismod velit imperdiet.',
+                'Design responsivo tornando seu site acessível a todos os usuários, independentemente do dispositivo. Criando telas a partir do conceito Mobile First.',
             icon: <ResponsivenessIcon />,
+        },
+        {
+            name: 'Analytics',
+            description:
+                'Obtenha informações sobre quem está navegando em seu site para que você possa tomar decisões de negócios mais inteligentes. ',
+            icon: <SearchIcon />,
         },
         {
             name: 'Clean code',
             description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in orci non tellus suscipit molestie et non lorem. Duis blandit sagittis elit, quis tincidunt sem euismod vel. Integer scelerisque eros et elit bibendum, at euismod velit imperdiet.',
+                'Desenvolvimento seguindo os principais design patterns para deixar o código intuitivo, elegante e com fácil manutenção.',
             icon: <MouseIcon />,
         },
     ],
