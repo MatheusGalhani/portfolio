@@ -19,7 +19,6 @@ import {
 } from './contact.styled';
 
 const Contact: React.FC = () => {
-    const [email, setEmail] = useState<string>('');
     const [subject, setSubject] = useState<string>('');
     const [body, setBody] = useState<string>('');
     return (
