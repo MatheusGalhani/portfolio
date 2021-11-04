@@ -6,11 +6,12 @@ import { SectionDescription, SectionTitle } from '../../styles/section.styled';
 import Circle from '../circle/circle';
 import {
     Container,
-    SkillAnchor, SkillItem,
+    SkillAnchor,
+    SkillItem,
     SkillItemContent,
     SkillList,
     SkillsDescriptionContent,
-    SkillsListContainer
+    SkillsListContainer,
 } from './skill.styled';
 
 const Skill: React.FC = () => {
@@ -52,16 +53,18 @@ const Skill: React.FC = () => {
                 <SkillList>
                     {_SKILL_SECTION.skills.map(skill => (
                         <SkillItem key={skill.name}>
-                            <Circle rating={skill.rating} />
-                            <SkillItemContent>
-                                <SkillAnchor
-                                    to={`#${_SKILL_SECTION.id}`}
-                                    onClick={() => onHandleSelectedSkill(skill)}
-                                    onMouseEnter={() => isBrowser && setSelectedSkill(skill)}
-                                >
+                            <SkillAnchor
+                                to={`#${_SKILL_SECTION.id}`}
+                                onClick={() => onHandleSelectedSkill(skill)}
+                                onMouseEnter={() =>
+                                    isBrowser && setSelectedSkill(skill)
+                                }
+                            >
+                                <Circle rating={skill.rating} />
+                                <SkillItemContent>
                                     {skill.icon}
-                                </SkillAnchor>
-                            </SkillItemContent>
+                                </SkillItemContent>
+                            </SkillAnchor>
                         </SkillItem>
                     ))}
                 </SkillList>
