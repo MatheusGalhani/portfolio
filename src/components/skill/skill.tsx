@@ -12,7 +12,7 @@ import {
 
 const Skill: React.FC = () => {
     return (
-        <Container id="skill">
+        <Container id="skills">
             <SkillsDescriptionContent>
                 <SectionTitle>Skills</SectionTitle>
                 <SectionDescription>
