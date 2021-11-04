@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import { IoArrowForwardOutline } from 'react-icons/io5';
 import { CONSTANTS } from '../../constants/constants';
 import { GithubIcon, InstagramIcon, MailIcon } from '../../icons';
 import Linkedin from '../../icons/linkedin';
-import { SectionDescription, SectionTitle } from '../../styles/section.styled';
+import {
+    SectionDescription,
+    SectionTitle,
+    VisitTo,
+} from '../../styles/section.styled';
 import Input from '../input/input';
 import Textarea from '../textarea/textarea';
 import {
@@ -51,19 +56,15 @@ const Contact: React.FC = () => {
                     value={subject}
                     onChange={e => setSubject(e.target.value)}
                 />
-                <Input
-                    placeholder="Email"
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                />
                 <Textarea
                     placeholder="Mensagem"
                     id="body"
                     value={body}
                     onChange={e => setBody(e.target.value)}
                 />
+                <VisitTo href={`${CONSTANTS.email}?subject=${subject}&body=${body}`}>
+                    Enviar Mensagem <IoArrowForwardOutline />
+                </VisitTo>
             </ContactEmail>
         </Container>
     );

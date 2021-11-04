@@ -4,6 +4,8 @@ export const SectionTitle = styled.h3`
     position: relative;
     font-size: 2rem;
     color: ${({ theme }) => theme.color.textColor};
+    margin-top: 0;
+    padding: 0;
 
     &::after {
         content: '';

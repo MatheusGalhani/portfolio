@@ -17,7 +17,7 @@ export const Container = styled.section`
 export const ContactInfo = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     margin: 1rem 0;
     width: 100%;
@@ -39,5 +39,5 @@ export const ContactEmail = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 `;
