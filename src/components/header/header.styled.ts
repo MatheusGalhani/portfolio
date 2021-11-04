@@ -23,6 +23,7 @@ export const HeaderMenu = styled.header`
     align-items: center;
     z-index: 10;
     padding: 1rem;
+    margin-left: 1rem;
     width: 100%;
     max-width: ${devices.ultraLargeDesktops};
 `;
