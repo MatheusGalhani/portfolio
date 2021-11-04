@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { CONSTANTS } from '../../constants/constants';
+import {_CONSTANTS } from '../../constants/constants';
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '../../icons';
 import { TypeTheme, useThemeContext } from '../../theme/context/theme';
 import Navigation from '../navigation/navigation';
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
         <Container>
             <HeaderMenu>
                 <TitleAction to="#root">
-                    <Title>{CONSTANTS.name}</Title>
+                    <Title>{_CONSTANTS.name}</Title>
                 </TitleAction>
                 <Spacer />
                 <Navigation

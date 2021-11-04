@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
-import { CONSTANTS } from '../../constants/constants';
+import { _CONSTANTS, _CONTACT_SECTION } from '../../constants/constants';
 import { GithubIcon, InstagramIcon, MailIcon } from '../../icons';
 import Linkedin from '../../icons/linkedin';
 import {
@@ -22,27 +22,26 @@ const Contact: React.FC = () => {
     const [subject, setSubject] = useState<string>('');
     const [body, setBody] = useState<string>('');
     return (
-        <Container id="contact">
+        <Container id={_CONTACT_SECTION.id}>
             <ContactInfo>
-                <SectionTitle>Contato</SectionTitle>
+                <SectionTitle>{_CONTACT_SECTION.title}</SectionTitle>
                 <SectionDescription>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam pretium bibendum ex non pretium. In nec pretium magna,
-                    sed interdum tortor. Nullam dui tellus, consectetur vel quam
-                    vel, vestibulum ultricies massa. Curabitur et sodales
-                    tortor. Ut ac mauris mi. Nulla nec porttitor lorem.
+                    {_CONTACT_SECTION.description}
                 </SectionDescription>
                 <SocialMediaContainer>
-                    <SocialMediaLink href={CONSTANTS.email} target="_blank">
+                    <SocialMediaLink href={_CONSTANTS.email} target="_blank">
                         <MailIcon />
                     </SocialMediaLink>
-                    <SocialMediaLink href={CONSTANTS.github} target="_blank">
+                    <SocialMediaLink href={_CONSTANTS.github} target="_blank">
                         <GithubIcon />
                     </SocialMediaLink>
-                    <SocialMediaLink href={CONSTANTS.linkedin} target="_blank">
+                    <SocialMediaLink href={_CONSTANTS.linkedin} target="_blank">
                         <Linkedin />
                     </SocialMediaLink>
-                    <SocialMediaLink href={CONSTANTS.instagram} target="_blank">
+                    <SocialMediaLink
+                        href={_CONSTANTS.instagram}
+                        target="_blank"
+                    >
                         <InstagramIcon />
                     </SocialMediaLink>
                 </SocialMediaContainer>
@@ -61,7 +60,9 @@ const Contact: React.FC = () => {
                     value={body}
                     onChange={e => setBody(e.target.value)}
                 />
-                <VisitTo href={`${CONSTANTS.email}?subject=${subject}&body=${body}`}>
+                <VisitTo
+                    href={`${_CONSTANTS.email}?subject=${subject}&body=${body}`}
+                >
                     Enviar Mensagem <IoArrowForwardOutline />
                 </VisitTo>
             </ContactEmail>

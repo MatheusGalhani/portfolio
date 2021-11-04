@@ -1,3 +1,10 @@
+import {
+    _ABOUT_SECTION,
+    _CONTACT_SECTION,
+    _SERVICE_SECTION,
+    _SKILL_SECTION,
+} from '../../constants/constants';
+
 interface NavListProps {
     name: string;
     ref: string;
@@ -5,19 +12,19 @@ interface NavListProps {
 
 export const itemsNavHeader: NavListProps[] = [
     {
-        name: 'Sobre Mim',
-        ref: '#about',
+        name: _ABOUT_SECTION.title,
+        ref: _ABOUT_SECTION.id,
     },
     {
-        name: 'Serviços',
-        ref: '#services',
+        name: _SERVICE_SECTION.title,
+        ref: _SERVICE_SECTION.id,
     },
     {
-        name: 'Skills',
-        ref: '#skills',
+        name: _SKILL_SECTION.title,
+        ref: _SKILL_SECTION.id,
     },
     {
-        name: 'Contato',
-        ref: '#contact',
+        name: _CONTACT_SECTION.title,
+        ref: _CONTACT_SECTION.id,
     },
 ];

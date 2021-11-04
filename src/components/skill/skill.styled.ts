@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { _SKILL_SECTION } from '../../constants/constants';
 import { breakpoints } from '../../rules/devices';
-import { _SKILL_MAX_ITEMS } from './skill.model';
 
 export const Container = styled.section`
     display: grid;
@@ -21,14 +21,14 @@ export const SkillsDescriptionContent = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 1rem;
+    margin: 2.5rem 1rem 1rem;
     grid-area: info;
 `;
 
 export const SkillList = styled.ul`
     grid-area: skill;
     display: grid;
-    grid-template-columns: repeat(${_SKILL_MAX_ITEMS}, 1fr);
+    grid-template-columns: repeat(${_SKILL_SECTION.max_items}, 1fr);
 `;
 
 export const SkillItem = styled.li`
