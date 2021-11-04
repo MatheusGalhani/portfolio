@@ -30,14 +30,16 @@ export const SkillsDescriptionContent = styled.div`
 export const SkillsListContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin: 1rem;
     grid-area: skill;
 `;
 
 export const SkillList = styled.ul`
     display: grid;
+    padding: 0;
+    margin: 0;
     grid-template-columns: repeat(
         ${_SKILL_SECTION.max_items / 2},
         minmax(7.5rem, 1fr)
