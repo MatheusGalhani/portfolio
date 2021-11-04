@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { _SKILL_SECTION } from '../../constants';
 import { breakpoints } from '../../rules/devices';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export const Container = styled.section`
     display: grid;
@@ -74,6 +75,24 @@ export const SkillItemContent = styled.span`
 
     svg {
         color: ${({ theme }) => theme.color.lightBlue};
+    }
+`;
+
+export const SkillAnchor = styled(Link)`
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+`;
+
+export const SkillTitleItemContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    svg {
+        margin: 0;
     }
 `;
 

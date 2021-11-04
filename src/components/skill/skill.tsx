@@ -1,16 +1,19 @@
 import React, { Fragment, useState } from 'react';
 import { _SKILL_SECTION } from '../../constants';
 import { TypeSkill } from '../../constants/constants.type';
+import { CloseIcon } from '../../icons';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
 import Circle from '../circle/circle';
 import {
     Container,
+    SkillAnchor,
     SkillButton,
     SkillItem,
     SkillItemContent,
     SkillList,
     SkillsDescriptionContent,
     SkillsListContainer,
+    SkillTitleItemContainer,
 } from './skill.styled';
 
 const Skill: React.FC = () => {
@@ -27,7 +30,14 @@ const Skill: React.FC = () => {
                     </Fragment>
                 ) : (
                     <Fragment>
-                        <SectionTitle>{selectedSkill.name}</SectionTitle>
+                        <SkillTitleItemContainer>
+                            <SectionTitle>{selectedSkill.name}</SectionTitle>
+                            <SkillButton
+                                onClick={() => setSelectedSkill(undefined)}
+                            >
+                                <CloseIcon />
+                            </SkillButton>
+                        </SkillTitleItemContainer>
                         <SectionDescription>
                             {selectedSkill.description}
                         </SectionDescription>
@@ -41,16 +51,15 @@ const Skill: React.FC = () => {
                 <SkillList>
                     {_SKILL_SECTION.skills.map(skill => (
                         <SkillItem key={skill.name}>
-                            <SkillButton
+                            <SkillAnchor to={`#${_SKILL_SECTION.id}`}
                                 onClick={() => setSelectedSkill(skill)}
                                 onMouseEnter={() => setSelectedSkill(skill)}
-                                onMouseLeave={() => setSelectedSkill(undefined)}
                             >
                                 <Circle rating={skill.rating} />
                                 <SkillItemContent>
                                     {skill.icon}
                                 </SkillItemContent>
-                            </SkillButton>
+                            </SkillAnchor>
                         </SkillItem>
                     ))}
                 </SkillList>
