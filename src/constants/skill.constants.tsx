@@ -12,7 +12,7 @@ const SkillConstant: TypeSkillSection = {
     id: 'skills',
     title: 'Skills',
     description:
-        '* Seja bem-vindo a sessão skill. Para verificar qual o nível de conhecimento basta passar o mouse na skill desejada *',
+        '* Seja bem-vindo a sessão skill. Caso desejar saber um pouco mais sobre as linguagens, basta passar o mouse na skill desejada! *',
     skills: [
         {
             name: 'Python',
