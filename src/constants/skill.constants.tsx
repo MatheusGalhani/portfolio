@@ -39,7 +39,7 @@ const SkillConstant: TypeSkillSection = {
             icon: <SiTypescript />,
             rating: 75,
             description:
-                'TypeScript is a programming language developed and maintained by Microsoft. It introduces additional features like strict type binding (variables are bound to specific data types) to JavaScript and can also be compiled down to JavaScript as well. TypeScript overcomes the largest issue with JavaScript; which is: a problem can only be detected during runtime in JavaScript, which may result in applications with bugs being shipped to the end-user. This will affect any business negatively by hampering the user experience. TypeScript removes this problem by checking for any issue at compile time.',
+                'TypeScript é uma linguagem de programação desenvolvida e mantida pela Microsoft. Ele apresenta recursos adicionais, como vinculação de tipo estrito (variáveis são vinculadas a tipos de dados específicos) para JavaScript e também pode ser compilado para JavaScript. TypeScript supera o maior problema com JavaScript; que é: um problema só pode ser detectado durante o tempo de execução em JavaScript, o que pode resultar no envio de aplicativos com bugs ao usuário final. Isso afetará qualquer negócio negativamente, dificultando a experiência do usuário. O TypeScript remove esse problema verificando qualquer problema no tempo de compilação. ',
         },
         {
             name: 'React',
