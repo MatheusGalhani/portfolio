@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { breakpoints } from "../../rules/devices";
+import styled from 'styled-components';
+import { breakpoints } from '../../rules/devices';
 
 export const Container = styled.section`
     display: flex;
@@ -23,7 +23,6 @@ export const ContactInfo = styled.div`
     width: 100%;
 `;
 
-
 export const SocialMediaContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -34,4 +33,11 @@ export const SocialMediaContainer = styled.div`
 export const SocialMediaLink = styled.a`
     padding: 0;
     margin: 1rem 2rem 1rem 0;
-`
+`;
+
+export const ContactEmail = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+`;

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CONSTANTS } from '../../constants/constants';
 import { GithubIcon, InstagramIcon, MailIcon } from '../../icons';
 import Linkedin from '../../icons/linkedin';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
+import Input from '../input/input';
 import {
+    ContactEmail,
     ContactInfo,
     Container,
     SocialMediaContainer,
@@ -11,6 +13,8 @@ import {
 } from './contact.styled';
 
 const Contact: React.FC = () => {
+    const [email, setEmail] = useState<string>('');
+    const [subject, setSubject] = useState<string>('');
     return (
         <Container id="contact">
             <ContactInfo>
@@ -37,6 +41,22 @@ const Contact: React.FC = () => {
                     </SocialMediaLink>
                 </SocialMediaContainer>
             </ContactInfo>
+            <ContactEmail>
+                <Input
+                    placeholder="Seu Nome Completo"
+                    type="text"
+                    id="subject"
+                    value={subject}
+                    onChange={e => setSubject(e.target.value)}
+                />
+                <Input
+                    placeholder="Email"
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                />
+            </ContactEmail>
         </Container>
     );
 };
