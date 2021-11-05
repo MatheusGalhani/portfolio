@@ -22,7 +22,11 @@ const About: React.FC = () => {
                         {description}
                     </SectionDescription>
                 ))}
-                <VisitTo href={_CONSTANTS.linkedin} target="_blank">
+                <VisitTo
+                    href={_CONSTANTS.linkedin}
+                    target="_blank"
+                    rel="noopener"
+                >
                     Visitar LinkedIn <IoArrowForwardOutline />
                 </VisitTo>
             </AboutContent>

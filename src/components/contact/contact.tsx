@@ -42,6 +42,7 @@ const Contact: React.FC = () => {
                         href={_CONSTANTS.github}
                         target="_blank"
                         aria-label="Abrir Github"
+                        rel="noopener"
                     >
                         <GithubIcon />
                     </SocialMediaLink>
@@ -49,6 +50,7 @@ const Contact: React.FC = () => {
                         href={_CONSTANTS.linkedin}
                         target="_blank"
                         aria-label="Abrir Linked-in"
+                        rel="noopener"
                     >
                         <Linkedin />
                     </SocialMediaLink>
@@ -56,6 +58,7 @@ const Contact: React.FC = () => {
                         href={_CONSTANTS.instagram}
                         target="_blank"
                         aria-label="Abrir Instagram"
+                        rel="noopener"
                     >
                         <InstagramIcon />
                     </SocialMediaLink>
