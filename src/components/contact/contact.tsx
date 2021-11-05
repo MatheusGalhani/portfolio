@@ -31,18 +31,31 @@ const Contact: React.FC = () => {
                     </SectionDescription>
                 ))}
                 <SocialMediaContainer>
-                    <SocialMediaLink href={_CONSTANTS.email} target="_blank">
+                    <SocialMediaLink
+                        href={_CONSTANTS.email}
+                        target="_blank"
+                        aria-label="Abrir aplicativo de email"
+                    >
                         <MailIcon />
                     </SocialMediaLink>
-                    <SocialMediaLink href={_CONSTANTS.github} target="_blank">
+                    <SocialMediaLink
+                        href={_CONSTANTS.github}
+                        target="_blank"
+                        aria-label="Abrir Github"
+                    >
                         <GithubIcon />
                     </SocialMediaLink>
-                    <SocialMediaLink href={_CONSTANTS.linkedin} target="_blank">
+                    <SocialMediaLink
+                        href={_CONSTANTS.linkedin}
+                        target="_blank"
+                        aria-label="Abrir Linked-in"
+                    >
                         <Linkedin />
                     </SocialMediaLink>
                     <SocialMediaLink
                         href={_CONSTANTS.instagram}
                         target="_blank"
+                        aria-label="Abrir Instagram"
                     >
                         <InstagramIcon />
                     </SocialMediaLink>

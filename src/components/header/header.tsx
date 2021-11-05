@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import {_CONSTANTS } from '../../constants';
+import { _CONSTANTS } from '../../constants';
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '../../icons';
 import { TypeTheme, useThemeContext } from '../../theme/context/theme';
 import Navigation from '../navigation/navigation';
@@ -37,10 +37,16 @@ const Header: React.FC = () => {
                     isShown={menuHamburguerShown}
                     onCloseHamburger={onCloseHamburger}
                 />
-                <ThemeButton onClick={onHandleTheme}>
+                <ThemeButton
+                    onClick={onHandleTheme}
+                    aria-label="Alteração temática dark-light"
+                >
                     {themeName === TypeTheme.light ? <MoonIcon /> : <SunIcon />}
                 </ThemeButton>
-                <HamburgerButton onClick={onHandleHamburguer}>
+                <HamburgerButton
+                    onClick={onHandleHamburguer}
+                    aria-label="Alterar Menu Hamburger - Aberto/Fechado"
+                >
                     {!menuHamburguerShown ? <HamburgerIcon /> : <CloseIcon />}
                 </HamburgerButton>
             </HeaderMenu>

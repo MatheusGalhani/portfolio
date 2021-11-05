@@ -65,6 +65,7 @@ const Skill: React.FC = () => {
                                 onMouseEnter={() =>
                                     isBrowser && setSelectedSkill(skill)
                                 }
+                                aria-label={`Ver descrição da skill de ${skill.name}`}
                             >
                                 <Circle rating={skill.rating} />
                                 <SkillItemContent>
