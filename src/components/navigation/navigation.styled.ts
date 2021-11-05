@@ -38,6 +38,8 @@ export const NavList = styled.ul`
     justify-content: center;
     align-items: center;
     list-style: none;
+    padding: 0;
+    margin: 0;
     @media ${breakpoints.tablets} {
         flex-direction: row;
         justify-content: center;
