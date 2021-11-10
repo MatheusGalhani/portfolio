@@ -15,7 +15,11 @@ const Navigation: React.FC<NavigationProps> = ({
             <NavList>
                 {itemsNavHeader.map(item => (
                     <NavItem key={item.ref}>
-                        <NavAction to={`#${item.ref}`} onClick={onCloseHamburger} aria-label={`Navegar para a sessão #${item.ref}`}>
+                        <NavAction
+                            href={`#${item.ref}`}
+                            onClick={onCloseHamburger}
+                            aria-label={`Navegar para a sessão #${item.ref}`}
+                        >
                             {item.name}
                         </NavAction>
                     </NavItem>

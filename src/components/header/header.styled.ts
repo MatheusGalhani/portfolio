@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { breakpoints, devices } from '../../rules/devices';
-import { HashLink as Link } from 'react-router-hash-link';
 
 export const Container = styled.header`
     display: flex;
@@ -62,4 +61,4 @@ export const HamburgerButton = styled.button`
 
 
 
-export const TitleAction = styled(Link)``;
+export const TitleAction = styled.a``;

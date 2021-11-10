@@ -60,7 +60,7 @@ const Skill: React.FC = () => {
                     {_SKILL_SECTION.skills.map(skill => (
                         <SkillItem key={skill.name}>
                             <SkillAnchor
-                                to={`#${_SKILL_SECTION.id}`}
+                                href={`#${_SKILL_SECTION.id}`}
                                 onClick={() => onHandleSelectedSkill(skill)}
                                 onMouseEnter={() =>
                                     isBrowser && setSelectedSkill(skill)

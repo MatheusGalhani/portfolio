@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { _SKILL_SECTION } from '../../constants';
 import { breakpoints } from '../../rules/devices';
-import { HashLink as Link } from 'react-router-hash-link';
 
 export const Container = styled.section`
     display: grid;
@@ -89,7 +88,7 @@ export const SkillItemContent = styled.span`
     }
 `;
 
-export const SkillAnchor = styled(Link)`
+export const SkillAnchor = styled.a`
     cursor: pointer;
     padding: 0;
     margin: 0;

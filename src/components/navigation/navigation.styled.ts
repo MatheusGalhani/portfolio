@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { breakpoints } from '../../rules/devices';
-import { HashLink as Link } from 'react-router-hash-link';
+
 interface NavContainerProps {
     isShown?: boolean;
 }
@@ -54,7 +54,7 @@ export const NavItem = styled.li`
     }
 `;
 
-export const NavAction = styled(Link)`
+export const NavAction = styled.a`
     font-size: 1rem;
     color: ${({ theme }) => theme.color.textColor};
     text-decoration: none;

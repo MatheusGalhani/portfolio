@@ -1,9 +1,8 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { ThemeProvider as StyledProvider, DefaultTheme} from 'styled-components';
-
+import { DefaultTheme, ThemeProvider as StyledProvider } from 'styled-components';
 import { useLocalStorage } from '../../hooks/useStorage';
-import { dark, light } from '../theme';
 import { GlobalStyle } from '../../styles/Global.styled';
+import { dark, light } from '../theme';
 
 
 export enum TypeTheme {

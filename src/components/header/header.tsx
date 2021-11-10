@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { _CONSTANTS } from '../../constants';
+import { _CONSTANTS, _HELLO_SECTION } from '../../constants';
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '../../icons';
 import { TypeTheme, useThemeContext } from '../../theme/context/theme';
 import Navigation from '../navigation/navigation';
@@ -14,6 +14,7 @@ import {
 } from './header.styled';
 
 const Header: React.FC = () => {
+    
     const { themeName, setThemeName } = useThemeContext();
     const [menuHamburguerShown, setMenuHamburguerShown] =
         useState<boolean>(false);
@@ -29,7 +30,7 @@ const Header: React.FC = () => {
     return (
         <Container>
             <HeaderMenu>
-                <TitleAction to="#root">
+                <TitleAction href={`#${_HELLO_SECTION.id}`}>
                     <Title>{_CONSTANTS.name}</Title>
                 </TitleAction>
                 <Spacer />
