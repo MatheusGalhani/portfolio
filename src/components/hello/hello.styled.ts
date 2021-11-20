@@ -26,7 +26,7 @@ export const Description = styled.span`
     color: ${({ theme }) => theme.color.textColor};
 `;
 
-export const MyName = styled.h3`
+export const MyName = styled.h1`
     color: ${({ theme }) => theme.color.lightBlue};
     font-size: 2.25rem;
     margin: 1rem 0;
