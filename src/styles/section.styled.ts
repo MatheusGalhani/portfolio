@@ -1,25 +1,7 @@
 import styled from 'styled-components';
 
-export const SectionH1Title = styled.h1`
-    position: relative;
-    font-size: 2rem;
-    color: ${({ theme }) => theme.color.textColor};
-    margin-top: 0;
-    padding: 0;
 
-    &::after {
-        content: '';
-        position: absolute;
-        width: 3.25rem;
-        height: 0.125rem;
-        left: 0;
-        bottom: -0.5rem;
-        border-radius: 0.25rem;
-        background: ${({ theme }) => theme.color.lightBlue};
-    }
-`;
-
-export const SectionTitle = styled.h3`
+export const SectionTitle = styled.h2`
     position: relative;
     font-size: 2rem;
     color: ${({ theme }) => theme.color.textColor};
