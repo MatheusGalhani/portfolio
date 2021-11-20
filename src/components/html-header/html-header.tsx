@@ -24,6 +24,7 @@ const HTMLHeader: NextPage = () => {
                 property="og:description"
                 content="Matheus Galhani - Desenvolvedor Full Stack."
             />
+            <meta property="og:locale" content="pt_BR" />
             <meta property="og:site_name" content="Matheus Galhani" />
             <meta property="og:url" content="https://matheusgalhani.com.br/" />
             <link rel="canonical" href="https://matheusgalhani.com.br/" />
