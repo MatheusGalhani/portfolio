@@ -27,7 +27,7 @@ export const HeaderMenu = styled.header`
     max-width: ${devices.ultraLargeDesktops};
 `;
 
-export const Title = styled.h4`
+export const Title = styled.h3`
     font-size: 1.5rem;
     color: ${({ theme }) => theme.color.textColor};
     padding: 0;

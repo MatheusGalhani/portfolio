@@ -41,7 +41,7 @@ export const ServicesProvider = styled.div`
     margin: 1rem;
 `;
 
-export const ServicesProviderTitle = styled.h4`
+export const ServicesProviderTitle = styled.h3`
     font-size: 1rem;
     color: ${({ theme }) => theme.color.textColor};
 `;
