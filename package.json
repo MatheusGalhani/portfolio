@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "author": "Matheus Galhani",
   "private": true,
   "scripts": {
     "dev": "next dev",
