@@ -1,17 +1,26 @@
 import React from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
+import Lottie from 'react-lottie';
 import { _CONSTANTS, _HELLO_SECTION } from '../../constants';
 import { VisitTo } from '../../styles/section.styled';
-import { RocketIcon, SpaceIcon } from './animation';
+import animationData from './hello.icon.json';
 import {
     Container,
     Description,
     HelloGridArea,
     IconGridArea,
-    MyName,
+    MyName
 } from './hello.styled';
 
 const Hello: React.FC = () => {
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
     return (
         <Container id={_HELLO_SECTION.id}>
             <HelloGridArea>
@@ -31,8 +40,12 @@ const Hello: React.FC = () => {
                 </VisitTo>
             </HelloGridArea>
             <IconGridArea>
-                <RocketIcon />
-                <SpaceIcon />
+                <Lottie
+                    options={defaultOptions}
+                    width={450}
+                    isStopped={false}
+                    isPaused={false}
+                />
             </IconGridArea>
         </Container>
     );
