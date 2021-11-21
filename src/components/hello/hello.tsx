@@ -43,6 +43,7 @@ const Hello: React.FC = () => {
                 <Lottie
                     options={defaultOptions}
                     width={450}
+                    height={350}
                     isStopped={false}
                     isPaused={false}
                 />
