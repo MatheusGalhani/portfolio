@@ -6,6 +6,7 @@ export const Container = styled.section`
     grid-template-areas: 'hello';
     justify-content: space-between;
     grid-gap: 1rem;
+    margin-top: 2rem;
     padding-left: 1rem;
     width: 100%;
     @media ${breakpoints.tablets} {
