@@ -1,7 +1,8 @@
 import React from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
-import { _ABOUT_SECTION, _CONSTANTS } from '../../constants';
+import { _CONSTANTS } from '../../constants';
 import { MeIcon } from '../../icons';
+import { TypeSectionWithButton } from '../../model/section.model';
 import {
     SectionDescription,
     SectionTitle,
@@ -9,16 +10,19 @@ import {
 } from '../../styles/section.styled';
 import { AboutContent, Container, ImageContent } from './about.styled';
 
-const About: React.FC = () => {
+interface AboutProps {
+    about: TypeSectionWithButton;
+}
+const About: React.FC<AboutProps> = ({ about }) => {
     return (
-        <Container id={_ABOUT_SECTION.id}>
+        <Container id={about.id}>
             <ImageContent>
                 <MeIcon />
             </ImageContent>
             <AboutContent>
-                <SectionTitle>{_ABOUT_SECTION.title}</SectionTitle>
-                {_ABOUT_SECTION.description.map((description, index) => (
-                    <SectionDescription key={`${_ABOUT_SECTION.id}-${index}`}>
+                <SectionTitle>{about.title}</SectionTitle>
+                {about.description.map((description, index) => (
+                    <SectionDescription key={`${about.id}-${index}`}>
                         {description}
                     </SectionDescription>
                 ))}
@@ -27,7 +31,7 @@ const About: React.FC = () => {
                     target="_blank"
                     rel="noopener"
                 >
-                    Visitar LinkedIn <IoArrowForwardOutline />
+                    {about.textButton} <IoArrowForwardOutline />
                 </VisitTo>
             </AboutContent>
         </Container>

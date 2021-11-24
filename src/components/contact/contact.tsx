@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
-import { _CONSTANTS, _CONTACT_SECTION } from '../../constants';
+import { _CONSTANTS } from '../../constants';
 import { GithubIcon, InstagramIcon, MailIcon } from '../../icons';
 import Linkedin from '../../icons/linkedin';
+import { TypeContactSection } from '../../model/contact.model';
 import {
     SectionDescription,
     SectionTitle,
-    VisitTo,
+    VisitTo
 } from '../../styles/section.styled';
 import Input from '../input/input';
 import Textarea from '../textarea/textarea';
@@ -15,18 +16,20 @@ import {
     ContactInfo,
     Container,
     SocialMediaContainer,
-    SocialMediaLink,
+    SocialMediaLink
 } from './contact.styled';
-
-const Contact: React.FC = () => {
+interface ContactProps {
+    contact: TypeContactSection;
+}
+const Contact: React.FC<ContactProps> = ({ contact }) => {
     const [subject, setSubject] = useState<string>('');
     const [body, setBody] = useState<string>('');
     return (
-        <Container id={_CONTACT_SECTION.id}>
+        <Container id={contact.id}>
             <ContactInfo>
-                <SectionTitle>{_CONTACT_SECTION.title}</SectionTitle>
-                {_CONTACT_SECTION.description.map((description, index) => (
-                    <SectionDescription key={`${_CONTACT_SECTION.id}-${index}`}>
+                <SectionTitle>{contact.title}</SectionTitle>
+                {contact.description.map((description, index) => (
+                    <SectionDescription key={`${contact.id}-${index}`}>
                         {description}
                     </SectionDescription>
                 ))}
@@ -34,14 +37,14 @@ const Contact: React.FC = () => {
                     <SocialMediaLink
                         href={_CONSTANTS.email}
                         target="_blank"
-                        aria-label="Abrir aplicativo de email"
+                        aria-label={contact.ariaLabel.email}
                     >
                         <MailIcon />
                     </SocialMediaLink>
                     <SocialMediaLink
                         href={_CONSTANTS.github}
                         target="_blank"
-                        aria-label="Abrir Github"
+                        aria-label={contact.ariaLabel.github}
                         rel="noopener"
                     >
                         <GithubIcon />
@@ -49,7 +52,7 @@ const Contact: React.FC = () => {
                     <SocialMediaLink
                         href={_CONSTANTS.linkedin}
                         target="_blank"
-                        aria-label="Abrir Linked-in"
+                        aria-label={contact.ariaLabel.linkedin}
                         rel="noopener"
                     >
                         <Linkedin />
@@ -57,7 +60,7 @@ const Contact: React.FC = () => {
                     <SocialMediaLink
                         href={_CONSTANTS.instagram}
                         target="_blank"
-                        aria-label="Abrir Instagram"
+                        aria-label={contact.ariaLabel.instagram}
                         rel="noopener"
                     >
                         <InstagramIcon />
@@ -66,14 +69,14 @@ const Contact: React.FC = () => {
             </ContactInfo>
             <ContactEmail>
                 <Input
-                    placeholder="Seu Nome Completo"
+                    placeholder={contact.placeholder.name}
                     type="text"
                     id="subject"
                     value={subject}
                     onChange={e => setSubject(e.target.value)}
                 />
                 <Textarea
-                    placeholder="Mensagem"
+                    placeholder={contact.placeholder.message}
                     id="body"
                     value={body}
                     onChange={e => setBody(e.target.value)}
@@ -81,7 +84,7 @@ const Contact: React.FC = () => {
                 <VisitTo
                     href={`${_CONSTANTS.email}?subject=${subject}&body=${body}`}
                 >
-                    Enviar Mensagem <IoArrowForwardOutline />
+                    {contact.textButton} <IoArrowForwardOutline />
                 </VisitTo>
             </ContactEmail>
         </Container>

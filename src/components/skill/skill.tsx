@@ -1,20 +1,25 @@
 import React, { Fragment, useCallback, useState } from 'react';
 import { isBrowser } from 'react-device-detect';
-import { _SKILL_SECTION } from '../../constants';
-import { TypeSkill } from '../../constants/constants.type';
+import { TypeAriaLabel } from '../../model/aria-label.model';
+import { TypeSkill, TypeSkillSection } from '../../model/skill.model';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
 import Circle from '../circle/circle';
 import {
     Container,
+    ImageSkill,
     SkillAnchor,
     SkillItem,
     SkillItemContent,
     SkillList,
     SkillsDescriptionContent,
-    SkillsListContainer,
+    SkillsListContainer
 } from './skill.styled';
 
-const Skill: React.FC = () => {
+interface SkillProps {
+    ariaLabel: TypeAriaLabel;
+    skill: TypeSkillSection;
+}
+const Skill: React.FC<SkillProps> = ({ ariaLabel, skill: skillSection }) => {
     const [selectedSkill, setSelectedSkill] = useState<TypeSkill | undefined>();
 
     const onHandleSelectedSkill = useCallback(
@@ -28,20 +33,18 @@ const Skill: React.FC = () => {
         [selectedSkill],
     );
     return (
-        <Container id={_SKILL_SECTION.id}>
+        <Container id={skillSection.id}>
             <SkillsDescriptionContent>
                 {!selectedSkill ? (
                     <Fragment>
-                        <SectionTitle>{_SKILL_SECTION.title}</SectionTitle>
-                        {_SKILL_SECTION.description.map(
-                            (description, index) => (
-                                <SectionDescription
-                                    key={`${_SKILL_SECTION.id}-${index}`}
-                                >
-                                    {description}
-                                </SectionDescription>
-                            ),
-                        )}
+                        <SectionTitle>{skillSection.title}</SectionTitle>
+                        {skillSection.description.map((description, index) => (
+                            <SectionDescription
+                                key={`${skillSection.id}-${index}`}
+                            >
+                                {description}
+                            </SectionDescription>
+                        ))}
                     </Fragment>
                 ) : (
                     <Fragment>
@@ -56,20 +59,20 @@ const Skill: React.FC = () => {
                 )}
             </SkillsDescriptionContent>
             <SkillsListContainer>
-                <SkillList>
-                    {_SKILL_SECTION.skills.map(skill => (
+                <SkillList max_items={skillSection.max_items}>
+                    {skillSection.skills.map(skill => (
                         <SkillItem key={skill.name}>
                             <SkillAnchor
-                                href={`#${_SKILL_SECTION.id}`}
+                                href={`#${skillSection.id}`}
                                 onClick={() => onHandleSelectedSkill(skill)}
                                 onMouseEnter={() =>
                                     isBrowser && setSelectedSkill(skill)
                                 }
-                                aria-label={`Ver descrição da skill de ${skill.name}`}
+                                aria-label={`${ariaLabel?.skill}${skill.name}`}
                             >
                                 <Circle rating={skill.rating} />
                                 <SkillItemContent>
-                                    {skill.icon}
+                                    <ImageSkill src={skill.icon} />
                                 </SkillItemContent>
                             </SkillAnchor>
                         </SkillItem>

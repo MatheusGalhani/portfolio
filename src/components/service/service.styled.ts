@@ -45,3 +45,7 @@ export const ServicesProviderTitle = styled.h3`
     font-size: 1rem;
     color: ${({ theme }) => theme.color.textColor};
 `;
+
+export const IconService = styled.img`
+    width: 30px;
+`;

@@ -1,7 +1,8 @@
 import React from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
 import Lottie from 'react-lottie';
-import { _CONSTANTS, _HELLO_SECTION } from '../../constants';
+import { _CONSTANTS } from '../../constants';
+import { TypeSectionWithButton } from '../../model/section.model';
 import { VisitTo } from '../../styles/section.styled';
 import animationData from './hello.icon.json';
 import {
@@ -9,10 +10,13 @@ import {
     Description,
     HelloGridArea,
     IconGridArea,
-    MyName
+    MyName,
 } from './hello.styled';
 
-const Hello: React.FC = () => {
+interface HelloProps {
+    hello: TypeSectionWithButton;
+}
+const Hello: React.FC<HelloProps> = ({ hello }) => {
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -22,12 +26,12 @@ const Hello: React.FC = () => {
         },
     };
     return (
-        <Container id={_HELLO_SECTION.id}>
+        <Container id={hello.id}>
             <HelloGridArea>
-                <Description>{_HELLO_SECTION.title}</Description>
+                <Description>{hello.title}</Description>
                 <MyName>{_CONSTANTS.name}</MyName>
-                {_HELLO_SECTION.description.map((description, index) => (
-                    <Description key={`${_HELLO_SECTION.id}-${index}`}>
+                {hello.description.map((description, index) => (
+                    <Description key={`${hello.id}-${index}`}>
                         {description}
                     </Description>
                 ))}
@@ -36,7 +40,7 @@ const Hello: React.FC = () => {
                     target="_blank"
                     rel="noopener"
                 >
-                    Visitar GitHub <IoArrowForwardOutline />
+                    {hello.textButton} <IoArrowForwardOutline />
                 </VisitTo>
             </HelloGridArea>
             <IconGridArea>

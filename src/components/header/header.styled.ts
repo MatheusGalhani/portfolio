@@ -59,6 +59,17 @@ export const HamburgerButton = styled.button`
 
 `;
 
-
-
 export const TitleAction = styled.a``;
+
+export const LanguageButton = styled.button`
+    display: flex;
+    font-size: 1rem;
+    background: transparent;
+    margin: 0;
+`;
+
+export const LanguageImage = styled.img`
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+`;

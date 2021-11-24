@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { _SKILL_SECTION } from '../../constants';
 import { breakpoints } from '../../rules/devices';
 
 export const Container = styled.section`
@@ -22,7 +21,7 @@ export const SkillsDescriptionContent = styled.div`
     align-items: flex-start;
     margin: 1rem;
     grid-area: info;
-    p { 
+    p {
         width: 80%;
         @media ${breakpoints.desktops} {
             width: 100%;
@@ -44,18 +43,21 @@ export const SkillsListContainer = styled.div`
     }
 `;
 
-export const SkillList = styled.ul`
+interface SkillListProps {
+    max_items: number;
+}
+export const SkillList = styled.ul<SkillListProps>`
     display: grid;
     padding: 0;
     margin: 0;
     grid-template-columns: repeat(
-        ${_SKILL_SECTION.max_items / 2},
+        ${({ max_items }) => max_items / 2},
         minmax(7.5rem, 1fr)
     );
     @media ${breakpoints.phones} {
         display: grid;
         grid-template-columns: repeat(
-            ${_SKILL_SECTION.max_items},
+            ${({ max_items }) => max_items},
             minmax(7.5rem, 1fr)
         );
     }
@@ -82,10 +84,6 @@ export const SkillItemContent = styled.span`
     width: 100%;
     height: 100%;
     font-size: 2rem;
-
-    svg {
-        color: ${({ theme }) => theme.color.lightBlue};
-    }
 `;
 
 export const SkillAnchor = styled.a`
@@ -93,8 +91,8 @@ export const SkillAnchor = styled.a`
     padding: 0;
     margin: 0;
     background: transparent;
+`;
 
-    svg {
-        margin: 0;
-    }
+export const ImageSkill = styled.img`
+    width: 30px;
 `;

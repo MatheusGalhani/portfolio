@@ -1,0 +1,140 @@
+{
+    "about":{
+        "id":"about",
+        "title":"Sobre Mim",
+        "description":[
+            "Sou um desenvolvedor Full Stack. Atualmente minhas linguagens favoritas são Python utilizando o Django Framework para criação de API's e React com TypeScript para desenvolvimento web."
+        ],
+        "textButton": "Visitar LinkedIn"
+    },
+    "contact":{
+        "id":"contact",
+        "title":"Contato",
+        "description":[
+            "Entre em contato para dúvidas, sugestões, orçamentos ou suporte."
+        ],
+        "textButton": "Enviar Mensagem",
+        "ariaLabel": {
+            "github": "Abrir Github",
+            "linkedin": "Abrir LinkedIn",
+            "email": "Abrir aplicativo de email",
+            "instagram": "Abrir Instagram"
+        },
+        "placeholder": {
+            "name": "Seu Nome Completo",
+            "message": "Mensagem"
+        }
+    },
+    "hello":{
+        "id":"hello",
+        "title":"Olá, eu sou",
+        "description":[
+            "Sou desenvolvedor Full Stack."
+        ],
+        "textButton": "Visitar GitHub"
+    },
+    "service":{
+        "id":"services",
+        "title":"Serviços",
+        "description":[
+            "Se você precisa de alguém para desenvolver um aplicativo, site pessoal, comercial ou até mesmo uma simples landing page você está no lugar certo!",
+            "Realizo as entregas dos projetos através do Github em um repositório privado ou público, com o intuito de manter o código sempre versionado, facilitando o processo de controle de histórico."
+        ],
+        "services":[
+            {
+                "name":"Development",
+                "description":"Desenvolvimento de projetos end-to-end, criando API's no padrão REST e criando websites dinâmicos ou estáticos.",
+                "icon":"assets/services/code.svg"
+            },
+            {
+                "name":"Mobile-friendly",
+                "description":"Design responsivo tornando seu site acessível, independentemente do dispositivo. Criando telas a partir do conceito Mobile First.",
+                "icon":"assets/services/responsive.svg"
+            },
+            {
+                "name":"Analytics",
+                "description":"Obtenha informações sobre quem está navegando em seu site, para que você possa tomar decisões de negócios mais inteligentes. ",
+                "icon":"assets/services/search.svg"
+            },
+            {
+                "name":"Clean code",
+                "description":"Desenvolvimento seguindo os principais design patterns, com objetivo de tornar o código mais intuitivo, elegante e com fácil manutenção.",
+                "icon":"assets/services/mouse.svg"
+            }
+        ]
+    },
+    "skill":{
+        "id":"skills",
+        "title":"Skills",
+        "description":[
+            "Seja bem-vindo a sessão skill. Caso queira conhecer um pouco mais sobre alguma skill, basta realizar um click na skill desejada!"
+        ],
+        "skills":[
+            {
+                "name":"Python",
+                "icon":"assets/skills/python.svg",
+                "rating":90,
+                "description":"Python é uma linguagem de programação interpretada, orientada a objetos e de alto nível com semântica dinâmica. Sendo utilizada para desenvolvimento web do lado do servidor, desenvolvimento de software e scripts de sistemas. "
+            },
+            {
+                "name":"Django",
+                "icon":"assets/skills/django.svg",
+                "rating":85,
+                "description":"Django é uma framework web para Python, que incentiva o desenvolvimento rápido e um design limpo e pragmático. Ele é responsável por grande parte do trabalho de desenvolvimento web."
+            },
+            {
+                "name":"JavaScript",
+                "icon":"assets/skills/javascript.svg",
+                "rating":85,
+                "description":"JavaScript é uma linguagem leve e habitualmente usado nas páginas webs, cujas implementações permitem que o script do lado do cliente interaja com o usuário e crie páginas dinâmicas. É uma linguagem de programação interpretada com recursos orientados a objetos."
+            },
+            {
+                "name":"TypeScript",
+                "icon":"assets/skills/typescript.svg",
+                "rating":75,
+                "description":"TypeScript é uma linguagem de programação desenvolvida e mantida pela Microsoft. Apresentando recursos adicionais, como vinculação de tipos estritos para JavaScript. TypeScript supera uma das maiores falhas do JavaScript, que é encontrar bugs no código durante a fase de desenvolvimento, verificando qualquer problema no tempo de compilação, impedindo a entrega do produto com defeitos para o cliente final."
+            },
+            {
+                "name":"React",
+                "icon":"assets/skills/react.svg",
+                "rating":80,
+                "description":"O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. Este framework também permite a criação de componentes reutilizáveis para nossa aplicação e a composição de elementos que podem ser alterados, sem a necessidade de recarregar a página."
+            },
+            {
+                "name":"Styled Components",
+                "icon":"assets/skills/styled-components.svg",
+                "rating":70,
+                "description":"Styled Components é uma biblioteca de CSS-in-JS, criada para ser um sucessor dos Módulos CSS, sendo uma maneira de escrever CSS com escopo para um único componente e não vazar para nenhum outro elemento da página."
+            },
+            {
+                "name":"Github",
+                "icon":"assets/skills/github.svg",
+                "rating":80,
+                "description":"GitHub é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git, permitindo que os programadores ou qualquer usuário da plataforma contribuam em projetos privados e/ou Open Source em qualquer lugar do mundo."
+            },
+            {
+                "name":"Docker",
+                "icon":"assets/skills/docker.svg",
+                "rating":50,
+                "description":"Docker consiste em uma plataforma Open Source, cujo objetivo é gerenciar aplicativos em contêineres como se fossem VM’s. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração."
+            }
+        ],
+        "max_items":4
+    },
+    "seo": {
+        "title": "Matheus Galhani | Portfólio | Desenvolvedor Full Stack",
+        "description": "Matheus Galhani - Desenvolvedor Full Stack.",
+        "ogDescription": "Matheus Galhani - Desenvolvedor Full Stack."
+    },
+    "ariaLabel": {
+        "header": {
+            "theme": "Alteração temática dark-light",
+            "hamburger": "Alterar Menu Hamburger - Aberto/Fechado"
+        },
+        "nav": "Navegar para a sessão",
+        "skill": "Ver descrição da skill de"
+    },
+    "footer": {
+        "description": "Todos os direitos reservados"
+    }
+}

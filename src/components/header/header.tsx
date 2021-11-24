@@ -1,20 +1,35 @@
-import React, { useCallback, useState } from 'react';
-import { _CONSTANTS, _HELLO_SECTION } from '../../constants';
+import { useRouter } from 'next/dist/client/router';
+import React, { useCallback, useMemo, useState } from 'react';
+import { _CONSTANTS } from '../../constants';
 import { CloseIcon, HamburgerIcon, MoonIcon, SunIcon } from '../../icons';
+import { TypeAriaLabel } from '../../model/aria-label.model';
+import { NavListProps } from '../../model/navigation.model';
 import { TypeTheme, useThemeContext } from '../../theme/context/theme';
 import Navigation from '../navigation/navigation';
 import {
     Container,
     HamburgerButton,
     HeaderMenu,
+    LanguageButton,
+    LanguageImage,
     Spacer,
     ThemeButton,
     Title,
-    TitleAction,
+    TitleAction
 } from './header.styled';
 
-const Header: React.FC = () => {
-    
+interface HeaderProps {
+    helloID: string;
+    itemsNavHeader: NavListProps[];
+    locale: string;
+    ariaLabel: TypeAriaLabel;
+}
+const Header: React.FC<HeaderProps> = ({
+    ariaLabel,
+    helloID,
+    itemsNavHeader,
+    locale,
+}) => {
     const { themeName, setThemeName } = useThemeContext();
     const [menuHamburguerShown, setMenuHamburguerShown] =
         useState<boolean>(false);
@@ -27,26 +42,54 @@ const Header: React.FC = () => {
             themeName === TypeTheme.dark ? TypeTheme.light : TypeTheme.dark;
         setThemeName(newTheme);
     }, [setThemeName, themeName]);
+    const { languageSrc, languageAlt, redirectLocale } = useMemo(() => {
+        if (locale === 'en') {
+            return {
+                languageSrc: 'assets/flag/brazil.svg',
+                languageAlt: 'Change to Portuguese',
+                redirectLocale: 'pt-BR',
+            };
+        }
+        return {
+            languageSrc: 'assets/flag/usa.svg',
+            languageAlt: 'Alterar para inglês',
+            redirectLocale: 'en',
+        };
+    }, [locale]);
+    const router = useRouter();
+    const handleLocaleChange = useCallback(
+        (locale: string) => {
+            router.push(router.asPath, router.asPath, { locale });
+        },
+        [router],
+    );
     return (
         <Container>
             <HeaderMenu>
-                <TitleAction href={`#${_HELLO_SECTION.id}`}>
+                <TitleAction href={`#${helloID}`}>
                     <Title>{_CONSTANTS.name}</Title>
                 </TitleAction>
                 <Spacer />
                 <Navigation
+                    itemsNavHeader={itemsNavHeader}
                     isShown={menuHamburguerShown}
                     onCloseHamburger={onCloseHamburger}
+                    ariaLabel={ariaLabel}
                 />
+                <LanguageButton
+                    onClick={() => handleLocaleChange(redirectLocale)}
+                >
+                    <LanguageImage src={languageSrc} alt={languageAlt} />
+                </LanguageButton>
                 <ThemeButton
                     onClick={onHandleTheme}
-                    aria-label="Alteração temática dark-light"
+                    aria-label={ariaLabel?.header.theme}
                 >
                     {themeName === TypeTheme.light ? <MoonIcon /> : <SunIcon />}
                 </ThemeButton>
                 <HamburgerButton
                     onClick={onHandleHamburguer}
-                    aria-label="Alterar Menu Hamburger - Aberto/Fechado"
+                    aria-label={ariaLabel?.header.hamburger}
                 >
                     {!menuHamburguerShown ? <HamburgerIcon /> : <CloseIcon />}
                 </HamburgerButton>

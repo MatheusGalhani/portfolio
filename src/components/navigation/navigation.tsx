@@ -1,14 +1,19 @@
 import React from 'react';
-import { itemsNavHeader } from './navigation.model';
 import { NavAction, NavContainer, NavItem, NavList } from './navigation.styled';
 import { useMediaQuery } from 'react-responsive';
 import { breakpoints } from '../../rules/devices';
+import { NavListProps } from '../../model/navigation.model';
+import { TypeAriaLabel } from '../../model/aria-label.model';
 interface NavigationProps {
     isShown?: boolean;
     onCloseHamburger: () => void;
+    itemsNavHeader: NavListProps[];    
+    ariaLabel: TypeAriaLabel;
 }
 const Navigation: React.FC<NavigationProps> = ({
+    ariaLabel,
     isShown,
+    itemsNavHeader,
     onCloseHamburger,
 }) => {
     const responsiveController = useMediaQuery({ query: breakpoints.tablets });
@@ -20,7 +25,7 @@ const Navigation: React.FC<NavigationProps> = ({
                         <NavAction
                             href={`#${item.ref}`}
                             onClick={onCloseHamburger}
-                            aria-label={`Navegar para a sessão #${item.ref}`}
+                            aria-label={`${ariaLabel?.nav}#${item.ref}`}
                         >
                             {item.name}
                         </NavAction>

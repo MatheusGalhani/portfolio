@@ -1,29 +1,33 @@
 import React from 'react';
-import { _SERVICE_SECTION } from '../../constants';
+import { TypeServiceSection } from '../../model/service.model';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
 import {
     Container,
+    IconService,
     ServicesDescriptionContent,
     ServicesProvider,
     ServicesProviderContainer,
     ServicesProviderTitle,
 } from './service.styled';
 
-const Service: React.FC = () => {
+interface ServiceProps {
+    service: TypeServiceSection;
+}
+const Service: React.FC<ServiceProps> = ({ service }) => {
     return (
-        <Container id={_SERVICE_SECTION.id}>
+        <Container id={service.id}>
             <ServicesDescriptionContent>
-                <SectionTitle>{_SERVICE_SECTION.title}</SectionTitle>
-                {_SERVICE_SECTION.description.map((description, index) => (
-                    <SectionDescription key={`${_SERVICE_SECTION.id}-${index}`}>
+                <SectionTitle>{service.title}</SectionTitle>
+                {service.description.map((description, index) => (
+                    <SectionDescription key={`${service.id}-${index}`}>
                         {description}
                     </SectionDescription>
                 ))}
             </ServicesDescriptionContent>
             <ServicesProviderContainer>
-                {_SERVICE_SECTION.services.map(item => (
+                {service.services.map(item => (
                     <ServicesProvider key={item.name}>
-                        {item.icon}
+                        <IconService src={item.icon} />
                         <ServicesProviderTitle>
                             {item.name}
                         </ServicesProviderTitle>
