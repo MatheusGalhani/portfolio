@@ -82,7 +82,7 @@ export async function getStaticProps({
     content['navigation'] = [
         {
             name: content.about.title,
-            ref: content.about.title,
+            ref: content.about.id,
         },
         {
             name: content.service.title,
