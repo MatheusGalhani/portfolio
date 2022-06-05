@@ -7,7 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Fragment } from 'react';
 import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
-import Hello from '../components/hello/hello';
+import Hello from '../views/hello/hello';
 import HTMLHeader from '../components/html-header/html-header';
 import { TypeAriaLabel } from '../model/aria-label.model';
 import { TypeContactSection } from '../model/contact.model';
