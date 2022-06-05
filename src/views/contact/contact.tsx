@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
+import Input from '../../components/input/input';
+import Textarea from '../../components/textarea/textarea';
 import { _CONSTANTS } from '../../constants';
 import { GithubIcon, InstagramIcon, MailIcon } from '../../icons';
 import Linkedin from '../../icons/linkedin';
@@ -7,16 +9,14 @@ import { TypeContactSection } from '../../model/contact.model';
 import {
     SectionDescription,
     SectionTitle,
-    VisitTo
+    VisitTo,
 } from '../../styles/section.styled';
-import Input from '../input/input';
-import Textarea from '../textarea/textarea';
 import {
     ContactEmail,
     ContactInfo,
     Container,
     SocialMediaContainer,
-    SocialMediaLink
+    SocialMediaLink,
 } from './contact.styled';
 interface ContactProps {
     contact: TypeContactSection;

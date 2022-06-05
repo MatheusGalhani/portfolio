@@ -1,9 +1,9 @@
 import React, { Fragment, useCallback, useState } from 'react';
 import { isBrowser } from 'react-device-detect';
+import Circle from '../../components/circle/circle';
 import { TypeAriaLabel } from '../../model/aria-label.model';
 import { TypeSkill, TypeSkillSection } from '../../model/skill.model';
 import { SectionDescription, SectionTitle } from '../../styles/section.styled';
-import Circle from '../circle/circle';
 import {
     Container,
     ImageSkill,
@@ -12,7 +12,7 @@ import {
     SkillItemContent,
     SkillList,
     SkillsDescriptionContent,
-    SkillsListContainer
+    SkillsListContainer,
 } from './skill.styled';
 
 interface SkillProps {

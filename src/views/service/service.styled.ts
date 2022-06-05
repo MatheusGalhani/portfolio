@@ -37,7 +37,7 @@ export const ServicesProvider = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;    
+    align-items: flex-start;
     margin: 1rem;
 `;
 
