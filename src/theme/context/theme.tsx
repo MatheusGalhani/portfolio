@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react';
 import { DefaultTheme, ThemeProvider as StyledProvider } from 'styled-components';
 import { useLocalStorage } from '../../hooks/useStorage';
 import { GlobalStyle } from '../../styles/Global.styled';
@@ -22,7 +22,7 @@ const ThemeContext = createContext<ThemeContextType>({ themeName: TypeTheme.dark
 export const useThemeContext = () => useContext(ThemeContext);
 
 
-export const ThemeProvider: React.FC = ({ children }) => {
+export const ThemeProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => {
     const [storage, setStorage] = useLocalStorage("theme", TypeTheme.dark);
     const [themeName, setThemeName] = useState(storage);
     const [theme, setTheme] = useState<DefaultTheme>(dark);
