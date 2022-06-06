@@ -72,7 +72,10 @@ const Skill: React.FC<SkillProps> = ({ ariaLabel, skill: skillSection }) => {
                             >
                                 <Circle rating={skill.rating} />
                                 <SkillItemContent>
-                                    <ImageSkill src={skill.icon} />
+                                    <ImageSkill
+                                        src={skill.icon}
+                                        alt={skill.name}
+                                    />
                                 </SkillItemContent>
                             </SkillAnchor>
                         </SkillItem>

@@ -27,7 +27,7 @@ const Service: React.FC<ServiceProps> = ({ service }) => {
             <ServicesProviderContainer>
                 {service.services.map(item => (
                     <ServicesProvider key={item.name}>
-                        <IconService src={item.icon} />
+                        <IconService src={item.icon} alt={item.name} />
                         <ServicesProviderTitle>
                             {item.name}
                         </ServicesProviderTitle>
