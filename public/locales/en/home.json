@@ -91,19 +91,19 @@
             {
                 "name":"TypeScript",
                 "icon":"assets/skills/typescript.svg",
-                "rating":75,
+                "rating":85,
                 "description":"TypeScript is a programming language developed and maintained by Microsoft. Introducing additional features such as binding strict types to JavaScript. TypeScript overcomes one of the biggest flaws of JavaScript, which is finding bugs in the code during the development phase, checking for any problems at compile time, preventing the delivery of the defective product to the end customer."
             },
             {
                 "name":"React",
                 "icon":"assets/skills/react.svg",
-                "rating":80,
+                "rating":90,
                 "description":"React is an open source JavaScript library focused on creating user interfaces on web pages. This framework also allows the creation of reusable components for our application and the composition of elements that can be changed, without the need to reload the page."
             },
             {
                 "name":"Styled Components",
                 "icon":"assets/skills/styled-components.svg",
-                "rating":70,
+                "rating":80,
                 "description":"Styled Components is a CSS-in-JS library, created to be a successor to the CSS Modules, being a way of writing CSS scoped to a single component and not leaking to any other element on the page. "
             },
             {

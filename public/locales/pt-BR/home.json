@@ -91,19 +91,19 @@
             {
                 "name":"TypeScript",
                 "icon":"assets/skills/typescript.svg",
-                "rating":75,
+                "rating":85,
                 "description":"TypeScript é uma linguagem de programação desenvolvida e mantida pela Microsoft. Apresentando recursos adicionais, como vinculação de tipos estritos para JavaScript. TypeScript supera uma das maiores falhas do JavaScript, que é encontrar bugs no código durante a fase de desenvolvimento, verificando qualquer problema no tempo de compilação, impedindo a entrega do produto com defeitos para o cliente final."
             },
             {
                 "name":"React",
                 "icon":"assets/skills/react.svg",
-                "rating":80,
+                "rating":90,
                 "description":"O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. Este framework também permite a criação de componentes reutilizáveis para nossa aplicação e a composição de elementos que podem ser alterados, sem a necessidade de recarregar a página."
             },
             {
                 "name":"Styled Components",
                 "icon":"assets/skills/styled-components.svg",
-                "rating":70,
+                "rating":80,
                 "description":"Styled Components é uma biblioteca de CSS-in-JS, criada para ser um sucessor dos Módulos CSS, sendo uma maneira de escrever CSS com escopo para um único componente e não vazar para nenhum outro elemento da página."
             },
             {
