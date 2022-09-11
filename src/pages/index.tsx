@@ -22,12 +22,11 @@ import About from '../views/about/about';
 import Contact from '../views/contact/contact';
 import Service from '../views/service/service';
 import Skill from '../views/skill/skill';
-import { AboutPage, ContactPage, HelloPage } from '../data';
+import { AboutPage, ContactPage, HelloPage, ServicePage } from '../data';
 
 const CACHE_IN_SECONDS_TIME = 1800;
 
 interface HomePageContent {
-    service: TypeServiceSection;
     skill: TypeSkillSection;
     navigation: NavListProps[];
     seo: TypeSEO;
@@ -41,6 +40,7 @@ interface HomePageProps {
     hello: TypeSectionWithButton;
     about: TypeSectionWithButton;
     contact: TypeContactSection;
+    service: TypeServiceSection;
 }
 
 const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
@@ -60,7 +60,7 @@ const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
                 <Main>
                     <Hello hello={rest.hello} />
                     <About about={rest.about} />
-                    <Service service={content.service} />
+                    <Service service={rest.service} />
                     <Skill
                         skill={content.skill}
                         ariaLabel={content.ariaLabel}
@@ -82,6 +82,7 @@ export async function getStaticProps({
     const hello = await HelloPage(locale);
     const about = await AboutPage(locale);
     const contact = await ContactPage(locale);
+    const service = await ServicePage(locale);
     const content = localeConfig._nextI18Next.initialI18nStore[locale]
         .home as HomePageContent;
     content['navigation'] = [
@@ -90,8 +91,8 @@ export async function getStaticProps({
             ref: about.id,
         },
         {
-            name: content.service.title,
-            ref: 'services',
+            name: service.title,
+            ref: service.id,
         },
         {
             name: content.skill.title,
@@ -103,7 +104,15 @@ export async function getStaticProps({
         },
     ];
     return {
-        props: { ...localeConfig, locale, content, hello, about, contact },
+        props: {
+            ...localeConfig,
+            locale,
+            content,
+            hello,
+            about,
+            contact,
+            service,
+        },
         revalidate: CACHE_IN_SECONDS_TIME,
     };
 }

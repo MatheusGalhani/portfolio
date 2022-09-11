@@ -1,7 +1,7 @@
-import { TypeSection } from "./section.model";
+import { TypeSection } from './section.model';
 
 export interface TypeServiceSection extends TypeSection {
-    services: {
+    items: {
         name: string;
         description: string;
         icon: string;
