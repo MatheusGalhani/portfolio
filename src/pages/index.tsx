@@ -22,12 +22,11 @@ import About from '../views/about/about';
 import Contact from '../views/contact/contact';
 import Service from '../views/service/service';
 import Skill from '../views/skill/skill';
-import { HelloPage } from '../data';
+import { AboutPage, HelloPage } from '../data';
 
 const CACHE_IN_SECONDS_TIME = 1800;
 
 interface HomePageContent {
-    about: TypeSectionWithButton;
     contact: TypeContactSection;
     service: TypeServiceSection;
     skill: TypeSkillSection;
@@ -41,6 +40,7 @@ interface HomePageProps {
     locale: string;
     content: HomePageContent;
     hello: TypeSectionWithButton;
+    about: TypeSectionWithButton;
 }
 
 const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
@@ -59,7 +59,7 @@ const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
             <Container>
                 <Main>
                     <Hello hello={rest.hello} />
-                    <About about={content.about} />
+                    <About about={rest.about} />
                     <Service service={content.service} />
                     <Skill
                         skill={content.skill}
@@ -79,12 +79,14 @@ export async function getStaticProps({
     const [localeConfig] = await Promise.all([
         serverSideTranslations(locale, ['common', 'home']),
     ]);
+    const hello = await HelloPage(locale);
+    const about = await AboutPage(locale);
     const content = localeConfig._nextI18Next.initialI18nStore[locale]
         .home as HomePageContent;
     content['navigation'] = [
         {
-            name: content.about.title,
-            ref: 'about',
+            name: about.title,
+            ref: about.id,
         },
         {
             name: content.service.title,
@@ -99,9 +101,8 @@ export async function getStaticProps({
             ref: 'contact',
         },
     ];
-    const hello = await HelloPage(locale);
     return {
-        props: { ...localeConfig, locale, content, hello },
+        props: { ...localeConfig, locale, content, hello, about },
         revalidate: CACHE_IN_SECONDS_TIME,
     };
 }

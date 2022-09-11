@@ -1,12 +1,4 @@
 {
-    "about":{
-        "id":"about",
-        "title":"About me",
-        "description":[
-            "I'm a full stack developer. Currently my favorite languages are Python using Django Framework for creating API's and React with TypeScript for web development."
-        ],
-        "textButton": "Visit LinkedIn"
-    },
     "contact":{
         "id":"contact",
         "title":"Contact",

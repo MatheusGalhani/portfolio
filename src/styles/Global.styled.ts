@@ -26,4 +26,7 @@ export const GlobalStyle = createGlobalStyle`
   a { 
     text-decoration: none;
   }
+  p {
+    color: ${({ theme }) => theme.color.paragraphColor};
+  }
 `;
