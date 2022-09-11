@@ -24,7 +24,7 @@ const About: React.FC<AboutProps> = ({ about }) => {
                     target="_blank"
                     rel="noopener"
                 >
-                    {about.textButton} <IoArrowForwardOutline />
+                    {about.text_button} <IoArrowForwardOutline />
                 </VisitTo>
             </AboutContent>
         </Container>

@@ -78,7 +78,7 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
                 <VisitTo
                     href={`${_CONSTANTS.email}?subject=${subject}&body=${body}`}
                 >
-                    {contact.textButton} <IoArrowForwardOutline />
+                    {contact.text_button} <IoArrowForwardOutline />
                 </VisitTo>
             </ContactEmail>
         </Container>

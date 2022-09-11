@@ -11,7 +11,7 @@ export const ContactPage = async (
         id: page.type,
         title: RichText.asText(data.title),
         description: RichText.asHtml(data.description),
-        textButton: RichText.asText(data.text_button),
+        text_button: RichText.asText(data.text_button),
         ariaLabel: {
             github: RichText.asText(data.github),
             linkedin: RichText.asText(data.linkedin),

@@ -37,7 +37,7 @@ const Hello: React.FC<HelloProps> = ({ hello }) => {
                     target="_blank"
                     rel="noopener"
                 >
-                    {hello.textButton} <IoArrowForwardOutline />
+                    {hello.text_button} <IoArrowForwardOutline />
                 </VisitTo>
             </HelloGridArea>
             <IconGridArea>

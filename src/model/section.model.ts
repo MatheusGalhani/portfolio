@@ -5,5 +5,5 @@ export interface TypeSection {
 }
 
 export interface TypeSectionWithButton extends TypeSection {
-    textButton: string;
+    text_button: string;
 }
