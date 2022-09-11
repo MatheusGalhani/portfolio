@@ -22,12 +22,17 @@ import About from '../views/about/about';
 import Contact from '../views/contact/contact';
 import Service from '../views/service/service';
 import Skill from '../views/skill/skill';
-import { AboutPage, ContactPage, HelloPage, ServicePage } from '../data';
+import {
+    AboutPage,
+    ContactPage,
+    HelloPage,
+    ServicePage,
+    SkillsPage,
+} from '../data';
 
 const CACHE_IN_SECONDS_TIME = 1800;
 
 interface HomePageContent {
-    skill: TypeSkillSection;
     navigation: NavListProps[];
     seo: TypeSEO;
     ariaLabel: TypeAriaLabel;
@@ -41,6 +46,7 @@ interface HomePageProps {
     about: TypeSectionWithButton;
     contact: TypeContactSection;
     service: TypeServiceSection;
+    skill: TypeSkillSection;
 }
 
 const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
@@ -61,10 +67,7 @@ const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
                     <Hello hello={rest.hello} />
                     <About about={rest.about} />
                     <Service service={rest.service} />
-                    <Skill
-                        skill={content.skill}
-                        ariaLabel={content.ariaLabel}
-                    />
+                    <Skill skill={rest.skill} ariaLabel={content.ariaLabel} />
                     <Contact contact={rest.contact} />
                 </Main>
             </Container>
@@ -83,6 +86,7 @@ export async function getStaticProps({
     const about = await AboutPage(locale);
     const contact = await ContactPage(locale);
     const service = await ServicePage(locale);
+    const skill = await SkillsPage(locale);
     const content = localeConfig._nextI18Next.initialI18nStore[locale]
         .home as HomePageContent;
     content['navigation'] = [
@@ -95,8 +99,8 @@ export async function getStaticProps({
             ref: service.id,
         },
         {
-            name: content.skill.title,
-            ref: 'skills',
+            name: skill.title,
+            ref: skill.id,
         },
         {
             name: contact.title,
@@ -112,6 +116,7 @@ export async function getStaticProps({
             about,
             contact,
             service,
+            skill,
         },
         revalidate: CACHE_IN_SECONDS_TIME,
     };
