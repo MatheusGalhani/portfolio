@@ -22,12 +22,11 @@ import About from '../views/about/about';
 import Contact from '../views/contact/contact';
 import Service from '../views/service/service';
 import Skill from '../views/skill/skill';
-import { AboutPage, HelloPage } from '../data';
+import { AboutPage, ContactPage, HelloPage } from '../data';
 
 const CACHE_IN_SECONDS_TIME = 1800;
 
 interface HomePageContent {
-    contact: TypeContactSection;
     service: TypeServiceSection;
     skill: TypeSkillSection;
     navigation: NavListProps[];
@@ -41,6 +40,7 @@ interface HomePageProps {
     content: HomePageContent;
     hello: TypeSectionWithButton;
     about: TypeSectionWithButton;
+    contact: TypeContactSection;
 }
 
 const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
@@ -65,7 +65,7 @@ const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
                         skill={content.skill}
                         ariaLabel={content.ariaLabel}
                     />
-                    <Contact contact={content.contact} />
+                    <Contact contact={rest.contact} />
                 </Main>
             </Container>
             <Footer description={content.footer.description} />
@@ -81,6 +81,7 @@ export async function getStaticProps({
     ]);
     const hello = await HelloPage(locale);
     const about = await AboutPage(locale);
+    const contact = await ContactPage(locale);
     const content = localeConfig._nextI18Next.initialI18nStore[locale]
         .home as HomePageContent;
     content['navigation'] = [
@@ -97,12 +98,12 @@ export async function getStaticProps({
             ref: 'skills',
         },
         {
-            name: content.contact.title,
-            ref: 'contact',
+            name: contact.title,
+            ref: contact.id,
         },
     ];
     return {
-        props: { ...localeConfig, locale, content, hello, about },
+        props: { ...localeConfig, locale, content, hello, about, contact },
         revalidate: CACHE_IN_SECONDS_TIME,
     };
 }

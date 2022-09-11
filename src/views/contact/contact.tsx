@@ -1,3 +1,4 @@
+import parse from 'html-react-parser';
 import React, { useState } from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
 import Input from '../../components/input/input';
@@ -6,11 +7,7 @@ import { _CONSTANTS } from '../../constants';
 import { GithubIcon, InstagramIcon, MailIcon } from '../../icons';
 import Linkedin from '../../icons/linkedin';
 import { TypeContactSection } from '../../model/contact.model';
-import {
-    SectionDescription,
-    SectionTitle,
-    VisitTo,
-} from '../../styles/section.styled';
+import { SectionTitle, VisitTo } from '../../styles/section.styled';
 import {
     ContactEmail,
     ContactInfo,
@@ -18,6 +15,7 @@ import {
     SocialMediaContainer,
     SocialMediaLink,
 } from './contact.styled';
+
 interface ContactProps {
     contact: TypeContactSection;
 }
@@ -28,11 +26,7 @@ const Contact: React.FC<ContactProps> = ({ contact }) => {
         <Container id={contact.id}>
             <ContactInfo>
                 <SectionTitle>{contact.title}</SectionTitle>
-                {contact.description.map((description, index) => (
-                    <SectionDescription key={`${contact.id}-${index}`}>
-                        {description}
-                    </SectionDescription>
-                ))}
+                {parse(contact.description)}
                 <SocialMediaContainer>
                     <SocialMediaLink
                         href={_CONSTANTS.email}
