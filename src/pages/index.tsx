@@ -22,11 +22,11 @@ import About from '../views/about/about';
 import Contact from '../views/contact/contact';
 import Service from '../views/service/service';
 import Skill from '../views/skill/skill';
+import { HelloPage } from '../data';
 
 const CACHE_IN_SECONDS_TIME = 1800;
 
 interface HomePageContent {
-    hello: TypeSectionWithButton;
     about: TypeSectionWithButton;
     contact: TypeContactSection;
     service: TypeServiceSection;
@@ -40,9 +40,10 @@ interface HomePageContent {
 interface HomePageProps {
     locale: string;
     content: HomePageContent;
+    hello: TypeSectionWithButton;
 }
 
-const Home: NextPage<HomePageProps> = ({ content, locale }) => {
+const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
     return (
         <Fragment>
             <HTMLHeader
@@ -50,14 +51,14 @@ const Home: NextPage<HomePageProps> = ({ content, locale }) => {
                 description={content.seo.description}
             />
             <Header
-                helloID={content.hello.id}
+                helloID={rest.hello.id}
                 itemsNavHeader={content.navigation}
                 locale={locale}
                 ariaLabel={content.ariaLabel}
             />
             <Container>
                 <Main>
-                    <Hello hello={content.hello} />
+                    <Hello hello={rest.hello} />
                     <About about={content.about} />
                     <Service service={content.service} />
                     <Skill
@@ -83,23 +84,24 @@ export async function getStaticProps({
     content['navigation'] = [
         {
             name: content.about.title,
-            ref: content.about.id,
+            ref: 'about',
         },
         {
             name: content.service.title,
-            ref: content.service.id,
+            ref: 'services',
         },
         {
             name: content.skill.title,
-            ref: content.skill.id,
+            ref: 'skills',
         },
         {
             name: content.contact.title,
-            ref: content.contact.id,
+            ref: 'contact',
         },
     ];
+    const hello = await HelloPage(locale);
     return {
-        props: { ...localeConfig, locale, content },
+        props: { ...localeConfig, locale, content, hello },
         revalidate: CACHE_IN_SECONDS_TIME,
     };
 }

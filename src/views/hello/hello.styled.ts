@@ -20,6 +20,10 @@ export const HelloGridArea = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    p {
+        font-size: 1.5rem;
+        color: ${({ theme }) => theme.color.textColor};
+    }
 `;
 
 export const Description = styled.span`

@@ -25,14 +25,6 @@
             "message": "Mensagem"
         }
     },
-    "hello":{
-        "id":"hello",
-        "title":"Olá, eu sou",
-        "description":[
-            "Sou desenvolvedor Full Stack."
-        ],
-        "textButton": "Visitar GitHub"
-    },
     "service":{
         "id":"services",
         "title":"Serviços",

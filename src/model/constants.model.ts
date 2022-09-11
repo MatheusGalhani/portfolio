@@ -4,4 +4,5 @@ export interface TypeConstants {
     linkedin: string;
     email: string;
     instagram: string;
+    prismicUrl: string;
 }

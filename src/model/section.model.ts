@@ -1,7 +1,7 @@
 export interface TypeSection {
     id: string;
     title: string;
-    description: string[];
+    description: string;
 }
 
 export interface TypeSectionWithButton extends TypeSection {
