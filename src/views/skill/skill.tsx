@@ -1,3 +1,4 @@
+import parse from 'html-react-parser';
 import React, { Fragment, useCallback, useState } from 'react';
 import { isBrowser } from 'react-device-detect';
 import Circle from '../../components/circle/circle';
@@ -38,13 +39,7 @@ const Skill: React.FC<SkillProps> = ({ ariaLabel, skill: skillSection }) => {
                 {!selectedSkill ? (
                     <Fragment>
                         <SectionTitle>{skillSection.title}</SectionTitle>
-                        {skillSection.description.map((description, index) => (
-                            <SectionDescription
-                                key={`${skillSection.id}-${index}`}
-                            >
-                                {description}
-                            </SectionDescription>
-                        ))}
+                        {parse(skillSection.description)}
                     </Fragment>
                 ) : (
                     <Fragment>
@@ -60,7 +55,7 @@ const Skill: React.FC<SkillProps> = ({ ariaLabel, skill: skillSection }) => {
             </SkillsDescriptionContent>
             <SkillsListContainer>
                 <SkillList max_items={skillSection.max_items}>
-                    {skillSection.skills.map(skill => (
+                    {skillSection.items.map(skill => (
                         <SkillItem key={skill.name}>
                             <SkillAnchor
                                 href={`#${skillSection.id}`}

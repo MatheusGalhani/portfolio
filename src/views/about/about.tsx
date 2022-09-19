@@ -1,13 +1,10 @@
+import parse from 'html-react-parser';
 import React from 'react';
 import { IoArrowForwardOutline } from 'react-icons/io5';
 import { _CONSTANTS } from '../../constants';
 import { MeIcon } from '../../icons';
 import { TypeSectionWithButton } from '../../model/section.model';
-import {
-    SectionDescription,
-    SectionTitle,
-    VisitTo,
-} from '../../styles/section.styled';
+import { SectionTitle, VisitTo } from '../../styles/section.styled';
 import { AboutContent, Container, ImageContent } from './about.styled';
 
 interface AboutProps {
@@ -21,17 +18,13 @@ const About: React.FC<AboutProps> = ({ about }) => {
             </ImageContent>
             <AboutContent>
                 <SectionTitle>{about.title}</SectionTitle>
-                {about.description.map((description, index) => (
-                    <SectionDescription key={`${about.id}-${index}`}>
-                        {description}
-                    </SectionDescription>
-                ))}
+                {parse(about.description)}
                 <VisitTo
                     href={_CONSTANTS.linkedin}
                     target="_blank"
                     rel="noopener"
                 >
-                    {about.textButton} <IoArrowForwardOutline />
+                    {about.text_button} <IoArrowForwardOutline />
                 </VisitTo>
             </AboutContent>
         </Container>

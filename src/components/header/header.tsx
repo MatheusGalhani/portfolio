@@ -15,7 +15,7 @@ import {
     Spacer,
     ThemeButton,
     Title,
-    TitleAction
+    TitleAction,
 } from './header.styled';
 
 interface HeaderProps {
@@ -43,7 +43,7 @@ const Header: React.FC<HeaderProps> = ({
         setThemeName(newTheme);
     }, [setThemeName, themeName]);
     const { languageSrc, languageAlt, redirectLocale } = useMemo(() => {
-        if (locale === 'en') {
+        if (locale === 'en-US') {
             return {
                 languageSrc: 'assets/flag/brazil.svg',
                 languageAlt: 'Change to Portuguese',
@@ -53,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({
         return {
             languageSrc: 'assets/flag/usa.svg',
             languageAlt: 'Alterar para inglês',
-            redirectLocale: 'en',
+            redirectLocale: 'en-US',
         };
     }, [locale]);
     const router = useRouter();

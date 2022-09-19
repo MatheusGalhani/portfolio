@@ -1,4 +1,4 @@
-import { TypeSection } from "./section.model";
+import { TypeSection } from './section.model';
 
 export interface TypeSkill {
     name: string;
@@ -7,6 +7,6 @@ export interface TypeSkill {
     description: string;
 }
 export interface TypeSkillSection extends TypeSection {
-    skills: TypeSkill[];
+    items: TypeSkill[];
     max_items: number;
 }

@@ -22,15 +22,17 @@ import About from '../views/about/about';
 import Contact from '../views/contact/contact';
 import Service from '../views/service/service';
 import Skill from '../views/skill/skill';
+import {
+    AboutPage,
+    ContactPage,
+    HelloPage,
+    ServicePage,
+    SkillsPage,
+} from '../data';
 
 const CACHE_IN_SECONDS_TIME = 1800;
 
 interface HomePageContent {
-    hello: TypeSectionWithButton;
-    about: TypeSectionWithButton;
-    contact: TypeContactSection;
-    service: TypeServiceSection;
-    skill: TypeSkillSection;
     navigation: NavListProps[];
     seo: TypeSEO;
     ariaLabel: TypeAriaLabel;
@@ -40,9 +42,14 @@ interface HomePageContent {
 interface HomePageProps {
     locale: string;
     content: HomePageContent;
+    hello: TypeSectionWithButton;
+    about: TypeSectionWithButton;
+    contact: TypeContactSection;
+    service: TypeServiceSection;
+    skill: TypeSkillSection;
 }
 
-const Home: NextPage<HomePageProps> = ({ content, locale }) => {
+const Home: NextPage<HomePageProps> = ({ content, locale, ...rest }) => {
     return (
         <Fragment>
             <HTMLHeader
@@ -50,21 +57,18 @@ const Home: NextPage<HomePageProps> = ({ content, locale }) => {
                 description={content.seo.description}
             />
             <Header
-                helloID={content.hello.id}
+                helloID={rest.hello.id}
                 itemsNavHeader={content.navigation}
                 locale={locale}
                 ariaLabel={content.ariaLabel}
             />
             <Container>
                 <Main>
-                    <Hello hello={content.hello} />
-                    <About about={content.about} />
-                    <Service service={content.service} />
-                    <Skill
-                        skill={content.skill}
-                        ariaLabel={content.ariaLabel}
-                    />
-                    <Contact contact={content.contact} />
+                    <Hello hello={rest.hello} />
+                    <About about={rest.about} />
+                    <Service service={rest.service} />
+                    <Skill skill={rest.skill} ariaLabel={content.ariaLabel} />
+                    <Contact contact={rest.contact} />
                 </Main>
             </Container>
             <Footer description={content.footer.description} />
@@ -78,28 +82,42 @@ export async function getStaticProps({
     const [localeConfig] = await Promise.all([
         serverSideTranslations(locale, ['common', 'home']),
     ]);
+    const hello = await HelloPage(locale);
+    const about = await AboutPage(locale);
+    const contact = await ContactPage(locale);
+    const service = await ServicePage(locale);
+    const skill = await SkillsPage(locale);
     const content = localeConfig._nextI18Next.initialI18nStore[locale]
         .home as HomePageContent;
     content['navigation'] = [
         {
-            name: content.about.title,
-            ref: content.about.id,
+            name: about.title,
+            ref: about.id,
         },
         {
-            name: content.service.title,
-            ref: content.service.id,
+            name: service.title,
+            ref: service.id,
         },
         {
-            name: content.skill.title,
-            ref: content.skill.id,
+            name: skill.title,
+            ref: skill.id,
         },
         {
-            name: content.contact.title,
-            ref: content.contact.id,
+            name: contact.title,
+            ref: contact.id,
         },
     ];
     return {
-        props: { ...localeConfig, locale, content },
+        props: {
+            ...localeConfig,
+            locale,
+            content,
+            hello,
+            about,
+            contact,
+            service,
+            skill,
+        },
         revalidate: CACHE_IN_SECONDS_TIME,
     };
 }

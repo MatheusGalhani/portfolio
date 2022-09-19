@@ -1,0 +1,17 @@
+{
+    "seo": {
+        "title": "Matheus Galhani | Portfolio | Full Stack Developer",
+        "description": "Matheus Galhani - Full Stack Developer ."
+    },
+    "ariaLabel": {
+        "header": {
+            "theme": "Change theme to dark-light",
+            "hamburger": "Change Hamburger Menu - Open/Closed "
+        },
+        "nav": "Navigate to session",
+        "skill": "Show skill description of"
+    },
+    "footer": {
+        "description": "All rights reserved"
+    }
+}

@@ -1,6 +1,7 @@
+import parse from 'html-react-parser';
 import React from 'react';
 import { TypeServiceSection } from '../../model/service.model';
-import { SectionDescription, SectionTitle } from '../../styles/section.styled';
+import { SectionTitle } from '../../styles/section.styled';
 import {
     Container,
     IconService,
@@ -18,22 +19,16 @@ const Service: React.FC<ServiceProps> = ({ service }) => {
         <Container id={service.id}>
             <ServicesDescriptionContent>
                 <SectionTitle>{service.title}</SectionTitle>
-                {service.description.map((description, index) => (
-                    <SectionDescription key={`${service.id}-${index}`}>
-                        {description}
-                    </SectionDescription>
-                ))}
+                {parse(service.description)}
             </ServicesDescriptionContent>
             <ServicesProviderContainer>
-                {service.services.map(item => (
+                {service.items.map(item => (
                     <ServicesProvider key={item.name}>
                         <IconService src={item.icon} alt={item.name} />
                         <ServicesProviderTitle>
                             {item.name}
                         </ServicesProviderTitle>
-                        <SectionDescription>
-                            {item.description}
-                        </SectionDescription>
+                        {parse(item.description)}
                     </ServicesProvider>
                 ))}
             </ServicesProviderContainer>

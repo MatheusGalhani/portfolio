@@ -1,9 +1,9 @@
 export interface TypeSection {
     id: string;
     title: string;
-    description: string[];
+    description: string;
 }
 
 export interface TypeSectionWithButton extends TypeSection {
-    textButton: string;
+    text_button: string;
 }

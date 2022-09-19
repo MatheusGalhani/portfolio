@@ -12,6 +12,7 @@ import {
     IconGridArea,
     MyName,
 } from './hello.styled';
+import parse from 'html-react-parser';
 
 interface HelloProps {
     hello: TypeSectionWithButton;
@@ -26,21 +27,17 @@ const Hello: React.FC<HelloProps> = ({ hello }) => {
         },
     };
     return (
-        <Container id={hello.id}>
+        <Container id="hello">
             <HelloGridArea>
                 <Description>{hello.title}</Description>
                 <MyName>{_CONSTANTS.name}</MyName>
-                {hello.description.map((description, index) => (
-                    <Description key={`${hello.id}-${index}`}>
-                        {description}
-                    </Description>
-                ))}
+                {parse(hello.description)}
                 <VisitTo
                     href={_CONSTANTS.github}
                     target="_blank"
                     rel="noopener"
                 >
-                    {hello.textButton} <IoArrowForwardOutline />
+                    {hello.text_button} <IoArrowForwardOutline />
                 </VisitTo>
             </HelloGridArea>
             <IconGridArea>
