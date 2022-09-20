@@ -1,11 +1,16 @@
 import { RichText } from 'prismic-dom';
-import { Page } from '../client/prismic';
-import { TypeContactSection } from '../model/contact.model';
+import { client } from '../client/prismic';
+import {
+    PageContactDocument,
+    TypeContactSection,
+} from '../model/contact.model';
 
 export const ContactPage = async (
     locale: string,
 ): Promise<TypeContactSection> => {
-    const page = await Page('contact', locale);
+    const page = await client.getSingle<PageContactDocument>('contact', {
+        lang: locale,
+    });
     const data = page.data;
     return {
         id: page.type,
