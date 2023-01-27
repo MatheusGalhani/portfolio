@@ -45,7 +45,7 @@ const Skill: React.FC<SkillProps> = ({ ariaLabel, skill: skillSection }) => {
                     <Fragment>
                         <SectionTitle>{selectedSkill.name}</SectionTitle>
                         <SectionDescription>
-                            {selectedSkill.description}
+                            {parse(selectedSkill.description)}
                         </SectionDescription>
                         <SectionDescription>
                             Rating: {(selectedSkill.rating / 10).toFixed(1)}
